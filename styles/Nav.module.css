@@ -1,0 +1,72 @@
+.navwrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.signin{
+  display: flex;
+  width: 125px;
+  justify-content: space-between;
+
+}
+
+.navBurger{
+  display: none;
+}
+
+@media screen and (max-width: 414px){
+
+  .signinButton, .registerButton{
+    display: none;
+  }
+  .navBurger{
+    display: block;
+
+  }
+  .signin{
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+
+  }
+}
+
+@media screen and (max-width: 375px){
+
+  .signinButton, .registerButton{
+    display: none;
+  }
+  .navBurger{
+    display: block;
+  }
+
+    .signin{
+      width: 30%;
+      justify-content: center;
+      align-items: center;
+
+
+  }
+}
+
+@media screen and (max-width: 325px){
+
+  .signinButton, .registerButton{
+    display: none;
+  }
+  .navBurger{
+    display: block;
+  
+  }
+  .signin{
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+
+
+}
+}

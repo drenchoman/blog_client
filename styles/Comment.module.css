@@ -1,0 +1,40 @@
+
+
+.commentCard{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-top: 2px solid #8b0000;
+  border-bottom: 42x solid #8b0000;
+  margin: 1rem;
+  height: 100%;
+  min-width: 325px;
+  max-width: 325px;
+  padding: 1rem 0.5rem;
+}
+
+.commentContent{
+  padding: 1rem 0;
+}
+
+.likeCount{
+  position: absolute;
+  bottom: 1rem;
+  /* left: 1rem; */
+}
+
+.date{
+  align-self: flex-end;
+}
+
+.thumbsup{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
+}
+
+.thumbsup:hover{
+  cursor:pointer;
+  transform: scale(1.1);
+}

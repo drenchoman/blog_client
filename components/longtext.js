@@ -1,16 +1,18 @@
 import React, {useState} from 'react'
 
-export default function Longtext({content, limit}){
+export default function Longtext({content, limit, link}){
 
   const toShow = content.substring(0, limit) + "...";
 
   if(content.length <= limit) {
-    return <p>{content}</p>
+    return <p> {content}</p>
   }
   return(
   <div>
     <p>{toShow}</p>
-    <button>Read more</button>
+    <a href={link}>
+    Read more
+    </a>
   </div>
 )
 }
