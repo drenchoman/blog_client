@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import styles from '../styles/Nav.module.css'
 import nav from '../public/images/nav.svg'
+import Navrightside from '../components/navrightside'
 
-export default function Nav({text, className}){
+export default function Nav({text, className, userAuth, updateUserAuth}){
   return(
     <nav className={styles.navwrapper}>
       <div className={styles.logo}>
@@ -10,17 +11,9 @@ export default function Nav({text, className}){
           <h1 className={className}>{text}</h1>
         </a>
       </div>
-      <div className={styles.signin}>
-      <div className={styles.navBurger}>
-        <Image
-        width={40}
-        height={40}
-        src={nav}
-        />
-        </div>
-        <button className={styles.signinButton}>Log in </button>
-        <button className={styles.registerButton}>Register </button>
-      </div>
+
+        <Navrightside userAuth={userAuth} updateUserAuth={updateUserAuth} />
+
     </nav>
   )
 }

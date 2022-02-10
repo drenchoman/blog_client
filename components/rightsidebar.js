@@ -1,6 +1,7 @@
 import styles from '../styles/Post.module.css'
+import {useState} from "react";
 
-export default function Rightsidebar({post}){
+export default function Rightsidebar({post, yearWritten}){
   const date = new Date(post.timeStamp);
   const date_formatted = date.toLocaleDateString('en-GB', {
     year: 'numeric',
@@ -9,13 +10,13 @@ export default function Rightsidebar({post}){
     hour: 'numeric',
     minute: '2-digit'
   });
-  const yearWritten = Math.floor((Math.random() * 1650) + 1);
+  const [yWritten, setYWritten] = useState(yearWritten)
 
   return(
     <div className={styles.rightSideContent}>
       <span>An etching by <b>{post.user.username}</b> </span>
       <span>Discovered on {date_formatted} </span>
-      <span>Estimated year written <strong>{yearWritten} AD</strong> </span>
+      <span>Estimated year written <strong>{yWritten} AD</strong> </span>
     </div>
   )
 }

@@ -1,0 +1,44 @@
+.isInvalid{
+  border: 2px red solid;
+}
+
+.formWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.formCard{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem;
+}
+
+.formRegister{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+
+
+}
+.formRegister > input{
+  margin: 0.75rem 0;
+
+}
+
+.invalidFeedback{
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  border-top: 2px solid #8b0000;
+  border-bottom: 2px solid #8b0000;
+}
+
+.submit{
+  width: 50%;
+  align-self: center;
+}

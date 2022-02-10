@@ -1,15 +1,36 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import React, {useState, useEffect} from "react";
 import styles from '../../styles/Home.module.css'
 import Nav from '../../components/nav'
 import Subheader from '../../components/subheader'
 import Ship from '../../components/ship'
 import Rightsidebar from '../../components/rightsidebar'
 import Comments from '../../components/comments'
+import CommentReply from '../../components/commentReply'
+import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
+import { useRouter } from "next/router";
 
 
-function BlogPost({firstpost, comments}){
+
+function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
+
+  const {query} = useRouter();
+  const[currentComments, setCurrentComments]= useState(comments);
+  const yearWritten = Math.floor((Math.random() * 1650) + 1);
+
+
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/posts/${query.id}/comments`)
+    .then((res) => res.json())
+    .then((data) => {
+      setCurrentComments(data)
+    })
+  }, [currentComments])
+
+
   return(
 
     <div className={styles.container}>
@@ -18,7 +39,7 @@ function BlogPost({firstpost, comments}){
         <meta name="description" content={firstpost.content}/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav text='Ye Olde Diary' />
+      <Nav text='Ye Olde Diary' userAuth={userAuth} updateUserAuth={updateUserAuth} />
 
       <div className={styles.blogWrapper}>
         <div className={styles.leftsideBar}>
@@ -26,43 +47,24 @@ function BlogPost({firstpost, comments}){
         </div>
         <div className={styles.blogDiv}>
           {firstpost.map((post) => (
-            <div className={styles.blogContainer}>
-            <div className={styles.blogHeader}>
-              <h2>{post.title}</h2>
-            </div>
-            <div className={styles.blogContent}>
-              <p className={styles.hasDropcap}>{post.content}</p>
-            </div>
-            <div className={styles.blogfooter}>
-              <div className={styles.blogfooterContent}>
-                <span>Impressed with your finding?</span>
-                <span>Consider giving it a like</span>
-              </div>
-              <div className={styles.blogfooterLikebutton}>
-                <Image
-                  width={50}
-                  height={50}
-                  src={thumb}
-                  alt='Thumbs up the post'
-                />
-              </div>
-            </div>
-          </div>
+            <Blog thumb={thumb} post={post} />
+
 
           ))}
           <div className={styles.commentWrapper}>
             <h3>Remarks</h3>
-          {comments.map((comment) =>(
+          {currentComments.map((comment) =>(
 
-            <Comments comment={comment} />
+            <Comments thumb={thumb} comment={comment} />
           ))}
+          <CommentReply  />
         </div>
 
         </div>
 
         <div className={styles.rightSideBar}>
             {firstpost.map((post) => (
-              <Rightsidebar post={post} />
+              <Rightsidebar yearWritten={yearWritten} post={post} />
             ))}
         </div>
         </div>
@@ -103,6 +105,7 @@ export async function getStaticProps({params}) {
     firstpost,
     comments,
   },
+  revalidate: 2,
 }
 }
 
