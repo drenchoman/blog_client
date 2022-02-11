@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, {useState, useEffect} from "react";
 import { useRouter } from "next/router";
 
-export default function Comments({comment, thumb}){
+export default function Comments({comment, thumb, index}){
   const date = new Date(comment.timeStamp);
   const date_formatted = date.toLocaleDateString('en-GB', {
     year: 'numeric',
@@ -49,7 +49,7 @@ const updateLike = async (e) => {
 
   return(
 
-    <div className={styles.commentCard}>
+    <div className={styles.commentCard} key={index}>
       <div>
         <h4>{comment.user.username} says...</h4>
         <p className={styles.commentContent}>{comment.comment}</p>

@@ -11,6 +11,7 @@ import CommentReply from '../../components/commentReply'
 import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
 import { useRouter } from "next/router";
+import Loginform from '../../components/loginform'
 
 
 
@@ -18,9 +19,12 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
   const {query} = useRouter();
   const[currentComments, setCurrentComments]= useState(comments);
+  const [loginChecked, setLoginChecked]= useState(false)
   const yearWritten = Math.floor((Math.random() * 1650) + 1);
 
-
+  const handleClick = () => {
+    setLoginChecked(!loginChecked)
+  }
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/posts/${query.id}/comments`)
@@ -46,16 +50,28 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
           <Ship className={styles.postImagediv} />
         </div>
         <div className={styles.blogDiv}>
-          {firstpost.map((post) => (
-            <Blog thumb={thumb} post={post} />
+          {firstpost.map((post, index) => (
+            <Blog key={index} thumb={thumb} post={post} />
 
 
           ))}
           <div className={styles.commentWrapper}>
+          {!userAuth && <div>
+            <span>To submit a comment- please log in or register </span>
+            <div>
+              <button onClick={handleClick}>Log in </button>
+              <a href='/register'>
+                <button>Register </button>
+              </a>
+              {loginChecked &&
+                <Loginform className={styles.loginComments} loginForm={styles.formCard}  updateUserAuth={updateUserAuth}/>
+              }
+            </div>
+          </div> }
             <h3>Remarks</h3>
-          {currentComments.map((comment) =>(
+          {currentComments.map((comment, index) =>(
 
-            <Comments thumb={thumb} comment={comment} />
+            <Comments key={index} thumb={thumb} comment={comment} />
           ))}
           <CommentReply  />
         </div>
@@ -63,8 +79,8 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
         </div>
 
         <div className={styles.rightSideBar}>
-            {firstpost.map((post) => (
-              <Rightsidebar yearWritten={yearWritten} post={post} />
+            {firstpost.map((post, index) => (
+              <Rightsidebar key={index} yearWritten={yearWritten} post={post} />
             ))}
         </div>
         </div>

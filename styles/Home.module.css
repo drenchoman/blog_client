@@ -2,6 +2,22 @@
   padding: 0 2rem;
 }
 
+.loginComments{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.formCard{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem;
+
+}
 
 .welcomeWrapper{
   display: flex;

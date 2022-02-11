@@ -2,12 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Nav from '../components/nav'
 import Subheader from '../components/subheader'
-
+import {useEffect} from 'react'
 import script from '../public/images/script.jpg'
 import Post from '../components/post'
 import Ship from '../components/ship'
 
 function Home({posts, userAuth, updateUserAuth}) {
+
   return (
     <div className={styles.container}>
       <Head>

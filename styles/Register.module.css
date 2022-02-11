@@ -10,12 +10,20 @@
   height: 70vh;
 }
 
+.loginComments{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .formCard{
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 300px;
   margin: 2rem;
+  padding: 1rem 0;
 }
 
 .formRegister{

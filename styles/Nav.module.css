@@ -7,6 +7,16 @@
   position: relative;
 }
 
+.loginWrapper{
+  position: absolute;
+  right: 2.5rem;
+  top: 6rem;
+}
+
+.loginformCard{
+  margin: 0;
+}
+
 .signin{
   display: flex;
   width: 125px;
@@ -37,7 +47,7 @@
 
 @media screen and (max-width: 375px){
 
-  .signinButton, .registerButton{
+  .signinButton, .registerButton, .logoutButton, .logoutButton{
     display: none;
   }
   .navBurger{
@@ -55,12 +65,12 @@
 
 @media screen and (max-width: 325px){
 
-  .signinButton, .registerButton{
+  .signinButton, .registerButton, .logoutButton{
     display: none;
   }
   .navBurger{
     display: block;
-  
+
   }
   .signin{
     width: 30%;

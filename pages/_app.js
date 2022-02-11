@@ -10,11 +10,12 @@ function MyApp({ Component, pageProps }) {
     }
   });
 
-const updateUserAuth = () => {
-  setUserAuth(!userAuth)
-  localStorage.setItem("userAuth", userAuth)
+  useEffect(() =>{
+    console.log(userAuth, "user auth")
+  }, [userAuth])
 
-
+const updateUserAuth = (boolean) => {
+  setUserAuth(boolean)
 
 };
 

@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-export default function Loginform({updateUserAuth}){
+export default function Loginform({updateUserAuth, className, formCard}){
 
   const [logErr, setLogErr] = useState(false);
   const [errMessage, setErrMessage] = useState('')
@@ -43,14 +43,12 @@ export default function Loginform({updateUserAuth}){
        setLogErr(true);
        return;
      }
-     console.log("SAVED", myJson)
-     localStorage.setItem("token", myJson.token)
+     console.log("SAVED", myJson);
+     updateUserAuth(true);
+     localStorage.setItem("token", myJson.token);
      localStorage.setItem("userAuth", true);
      localStorage.setItem("username", myJson.body.username);
-     localStorage.setItem("id", myJson.body._id)
-     updateUserAuth();
-     reset();
-     window.location.href = '/'
+     localStorage.setItem("id", myJson.body._id);
 
    } catch(err){
      console.log(err);
@@ -59,9 +57,9 @@ export default function Loginform({updateUserAuth}){
 
 
   return(
-    <div className={styles.formWrapper}>
+    <div className={className}>
       <h2>Login</h2>
-      <div className={styles.formCard}>
+      <div className={formCard}>
 
       <form className={styles.formRegister} onSubmit={handleSubmit(submitForm)}>
         <label htmlFor="username">Username</label>
