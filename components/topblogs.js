@@ -21,7 +21,7 @@ return(
         </a>
       </Link>
     </div>
-    <Longtext limit={30} content={post.content} link={'/posts/' + post._id} />
+    <Longtext limit={55} content={post.content} link={'/posts/' + post._id} />
     <div className={styles.authorinfo}>
       <span><strong>{post.user.username}</strong></span>
       <span><b>Discovered {date_formatted} </b></span>

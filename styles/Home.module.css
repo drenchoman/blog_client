@@ -10,6 +10,8 @@
   margin: 1rem 0;
 }
 
+/* .blueFilter{
+filter: invert(75%) sepia(1%) saturate(0%) hue-rotate(37deg) brightness(95%) contrast(95%);} */
 
 .etchings > h2 {
   font-size: 3rem;

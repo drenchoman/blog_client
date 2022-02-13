@@ -30,15 +30,15 @@ const burgerClick = () => {
 
     </nav>
     {burgerClicked &&
-      <div className={`${styles.burgerModal} ${styles.animatePop}`}>
-        <div className={styles.modalOption}>
+      <div className={styles.burgerModal }>
+        <div className={`${styles.modalOption} ${styles.delay1} ${styles.animatePop}`}>
           <Link href='/login'>
           <a>
             Login
           </a>
           </Link>
         </div>
-        <div className={styles.modalOption}>
+        <div className={`${styles.modalOption} ${styles.animatePop} ${styles.delay1}`}>
           <Link href='/register'>
           <a>
             Register

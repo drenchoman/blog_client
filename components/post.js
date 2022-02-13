@@ -15,10 +15,12 @@ const date_formatted = date.toLocaleDateString('en-GB', {
   <div key={post._id} className={styles.card}>
     <div className={styles.cardTitle}>
       <Link href={'/posts/' + post._id}>
+      <a>
         <h4 className={styles.cardTitle}>{post.title}</h4>
+        </a>
       </Link>
     </div>
-    <Longtext limit={40} content={post.content} link={'/posts/' + post._id} />
+    <Longtext limit={55} content={post.content} link={'/posts/' + post._id} />
     <div className={styles.authorinfo}>
       <span><strong>{post.user.username}</strong></span>
       <span><b>Discovered {date_formatted} </b></span>

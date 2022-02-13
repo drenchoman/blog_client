@@ -17,7 +17,7 @@ const topThreePosts = topPosts.slice(0, 3);
       <Head>
         <title>Ye Olde Diary</title>
         <meta name="description" content="Rediscover lost texts and gain insight from a forgotten time in history" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <div className={styles.container}>
       <div className={styles.welcomeWrapper}>

@@ -13,9 +13,13 @@ export default function Comments({comment, thumb, index}){
     minute: "2-digit",
   });
 
+  const [likeClicked, setLikeClicked]= useState(false);
+
 
 const updateLike = async (e) => {
+  setLikeClicked(!likeClicked)
   const idobject= {
+    commentid: e.target.id
   }
   const commentid = JSON.stringify(idobject)
   const token = localStorage.getItem("token");
@@ -61,7 +65,7 @@ if (comment === 'undefined' || null){
       <div className={styles.likeCount}>
         <span>Likes: {comment.likeCount}</span>
       </div>
-      <div className={styles.thumbsup} >
+      <div className={likeClicked ? styles.thumbsup : styles.likedComment} >
 
         <Image
           width={30}

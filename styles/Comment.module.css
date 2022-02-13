@@ -20,6 +20,18 @@
   align-items: center;
   height: 100%;
   min-height: 125px;
+
+}
+
+.likedComment{
+  filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.replyWrapper{
+  margin: 0 0 4rem 0;
 }
 
 .commentReply > label{
@@ -47,7 +59,8 @@
   filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
 }
 
-.thumbsup:hover{
+.thumbsup:hover,
+.likedComment:hover{
   cursor:pointer;
   transform: scale(1.1);
 }
