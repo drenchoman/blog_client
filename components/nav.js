@@ -22,8 +22,9 @@ const burgerClick = () => {
         <a>
           <h1 className={className}>{text}</h1>
         </a>
+        </Link>
       </div>
-      </Link>
+
 
         <Navrightside userAuth={userAuth} updateUserAuth={updateUserAuth} burgerClick={burgerClick} burgerClicked={burgerClicked} />
 
