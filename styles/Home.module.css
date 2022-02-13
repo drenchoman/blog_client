@@ -10,6 +10,25 @@
   margin: 1rem 0;
 }
 
+
+.etchings > h2 {
+  font-size: 3rem;
+}
+
+.etchings > p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.topPostsWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+  justify-content: flex-start;
+  border-left: 1px solid #8b0000;
+}
+
 .formCard{
   display: flex;
   flex-direction: column;
@@ -23,12 +42,22 @@
   display: flex;
 }
 
+.welcomeContainer{
+  display: flex;
+width: 100%;
+flex-direction: row;
+
+
+}
+
 .subheaderDiv{
   display: flex;
-  align-items:flex-end;
+  align-items:center;
   justify-content: center;
   width: 100%;
   flex-direction: column;
+  border-right: 1px solid #8b0000;
+  margin: 1rem 0;
 }
 .subheaderLeftSide{
   display: flex;
@@ -41,7 +70,7 @@
 .welcomeImagediv{
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
 }
 
@@ -56,12 +85,16 @@
 .postsWrapper{
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
 }
 
 .allPosts{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 0 0 2rem 0;
+  padding: 0 8rem;
 }
 
 .postsHeader{
@@ -167,7 +200,7 @@ flex-direction: row;
 }
 .leftsideBar{
   width: 100%;
-  height: 90vh;
+  height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -175,6 +208,7 @@ flex-direction: row;
 }
 .rightSideBar{
   width: 100%;
+  height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -186,7 +220,7 @@ flex-direction: row;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .blogDiv{
@@ -222,6 +256,8 @@ flex-direction: row;
   align-items: center;
   text-align: center;
   width: 100%;
+  min-height: 70px;
+  height: 100%;
 
 }
 
@@ -231,6 +267,7 @@ flex-direction: row;
   justify-content: center;
   align-items: center;
   width:100%;
+  /* padding: 1rem 0; */
   filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
 
 }
@@ -240,6 +277,9 @@ flex-direction: row;
   cursor:pointer;
 }
 
+.hasDropcap{
+  line-height: 1.5;
+}
 
 .hasDropcap:first-letter {
   font-family: "IM Fell DW Pica SC", serif;
@@ -249,13 +289,41 @@ flex-direction: row;
   margin: 0.1em 0.1em 0.2em 0;
   color: #8b0000;
 }
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.commentHelpWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+.commentHelp{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+.helpButtons{
+    align-self: center;
+      display: flex;
+      border: 1px solid #8b0000;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      width: 100px;
+      justify-content: center;
+      font-size: 1rem;
+      color: #fff3c9;
+    background-color: #8b0000;
+}
+
+.helpButtons:hover,
+.helpButtons:focus,
+.helpButtons:active{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 @media screen and (max-width: 720px){
   .blogWrapper, .welcomeWrapper{
     flex-direction: column;
@@ -266,14 +334,30 @@ flex-direction: row;
   }
   .rightSideBar{
     order: 2;
+    height: 100%;
+    margin-top: 1rem;
   }
   .blogDiv{
     order: 3;
+  }
+  .topPostsWrapper{
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 414px){
-  .blogWrapper, .welcomeWrapper{
+  .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
   .leftsideBar{
@@ -282,14 +366,33 @@ flex-direction: row;
   }
   .rightSideBar{
     order: 2;
+    height: 100%;
+    margin-top: 1rem;
   }
   .blogDiv{
     order: 3;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .allPosts{
+    padding: 0;
+  }
+  .topPostsWrapper{
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 375px){
-  .blogWrapper, .welcomeWrapper{
+  .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
   .leftsideBar{
@@ -298,15 +401,40 @@ flex-direction: row;
   }
   .rightSideBar{
     order: 2;
+    height: 100%;
+    margin-top: 1rem;
   }
   .blogDiv{
     order: 3;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .allPosts{
+    padding: 0;
+  }
+  .topPostsWrapper{
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 325px){
-  .blogWrapper, .welcomeWrapper{
+  .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .allPosts{
+    padding: 0;
   }
   .leftsideBar{
     height: 100%;
@@ -314,8 +442,21 @@ flex-direction: row;
   }
   .rightSideBar{
     order: 2;
+    height: 100%;
+    margin-top: 1rem;
   }
   .blogDiv{
     order: 3;
+  }
+  .topPostsWrapper{
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
   }
 }

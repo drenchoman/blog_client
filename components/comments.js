@@ -14,10 +14,7 @@ export default function Comments({comment, thumb, index}){
   });
 
 const updateLike = async (e) => {
-  console.log(e.target.name)
-  console.log(e.target.id)
   const idobject= {
-    commentid: e.target.id
   }
   const commentid = JSON.stringify(idobject)
   const token = localStorage.getItem("token");
@@ -25,7 +22,7 @@ const updateLike = async (e) => {
 
   try{
     const req = await fetch(
-      `http://localhost:5000/api/comments`,
+      `https://glacial-thicket-60246.herokuapp.com/api/comments`,
       {
         method: 'PUT',
         body: commentid,
@@ -55,7 +52,7 @@ const updateLike = async (e) => {
         <p className={styles.commentContent}>{comment.comment}</p>
       </div>
       <div className={styles.likeCount}>
-        <span>{comment.likeCount}</span>
+        <span>Likes: {comment.likeCount}</span>
       </div>
       <div className={styles.thumbsup} >
 

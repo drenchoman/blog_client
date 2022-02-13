@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, {useState, useEffect} from "react";
 import styles from '../../styles/Home.module.css'
-import Nav from '../../components/nav'
 import Subheader from '../../components/subheader'
 import Ship from '../../components/ship'
 import Rightsidebar from '../../components/rightsidebar'
@@ -27,7 +26,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
   }
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/posts/${query.id}/comments`)
+    fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts/${query.id}/comments`)
     .then((res) => res.json())
     .then((data) => {
       setCurrentComments(data)
@@ -36,15 +35,13 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
 
   return(
-
-    <div className={styles.container}>
+    <>
       <Head>
         <title>{firstpost.title}</title>
         <meta name="description" content={firstpost.content}/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav text='Ye Olde Diary' userAuth={userAuth} updateUserAuth={updateUserAuth} />
-
+      <div className={styles.container}>
       <div className={styles.blogWrapper}>
         <div className={styles.leftsideBar}>
           <Ship className={styles.postImagediv} />
@@ -56,24 +53,29 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
           ))}
           <div className={styles.commentWrapper}>
-          {!userAuth && <div>
+          {!userAuth && <div className={styles.commentHelpWrapper}>
+
+             <div className={styles.commentHelp}>
             <span>To submit a comment- please log in or register </span>
-            <div>
-              <button onClick={handleClick}>Log in </button>
-              <a href='/register'>
-                <button>Register </button>
-              </a>
-              {loginChecked &&
-                <Loginform className={styles.loginComments} loginForm={styles.formCard}  updateUserAuth={updateUserAuth}/>
-              }
             </div>
+            <div className={styles.commentHelpButtons}>
+            <a href='/register'>
+              <button className={styles.helpButtons}>Register </button>
+            </a>
+              <button className={styles.helpButtons} onClick={handleClick}>Log in </button>
+
+
+            </div>
+            {loginChecked &&
+              <Loginform className={styles.loginComments} loginForm={styles.formCard}  updateUserAuth={updateUserAuth}/>
+            }
           </div> }
             <h3>Remarks</h3>
           {currentComments.map((comment, index) =>(
 
             <Comments key={index} thumb={thumb} comment={comment} />
           ))}
-          <CommentReply  />
+          <CommentReply userAuth={userAuth}  />
         </div>
 
         </div>
@@ -88,14 +90,14 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
 
       </div>
-
+</>
 
 )
 
 }
 
 export async function getStaticPaths() {
-  const res = await fetch('http://localhost:5000/api/posts');
+  const res = await fetch('https://glacial-thicket-60246.herokuapp.com/api/posts');
   const allPosts = await res.json();
 
   const paths = allPosts.map((post) => ({
@@ -107,10 +109,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({params}) {
 
-  const res = await fetch (`http://localhost:5000/api/posts/${params.id}`);
+  const res = await fetch (`https://glacial-thicket-60246.herokuapp.com/api/posts/${params.id}`);
   const post = await res.json();
 
-  const response = await fetch(`http://localhost:5000/api/posts/${params.id}/comments`);
+  const response = await fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts${params.id}/comments`);
   const comments = await response.json();
 
 

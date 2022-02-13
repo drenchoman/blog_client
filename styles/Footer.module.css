@@ -1,0 +1,20 @@
+.footerWrapper{
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #8b0000;
+
+}
+
+.contentWrapper{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  width: 125px;
+  margin: 0.5rem 0;
+  filter: invert(96%) sepia(65%) saturate(457%) hue-rotate(314deg) brightness(103%) contrast(101%)
+}

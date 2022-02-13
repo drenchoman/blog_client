@@ -1,5 +1,6 @@
 import '../styles/Oldbook.css'
 import {useEffect, useState} from 'react'
+import Layout from '../components/layout'
 
 function MyApp({ Component, pageProps }) {
   const [userAuth, setUserAuth]= useState(() =>{
@@ -11,7 +12,8 @@ function MyApp({ Component, pageProps }) {
   });
 
   useEffect(() =>{
-    console.log(userAuth, "user auth")
+    // let isMounted = true;
+    localStorage.setItem("userAuth", JSON.stringify(userAuth))
   }, [userAuth])
 
 const updateUserAuth = (boolean) => {
@@ -19,7 +21,9 @@ const updateUserAuth = (boolean) => {
 
 };
 
-  return <Component {...pageProps} updateUserAuth={updateUserAuth} userAuth={userAuth} />
+  return <Layout userAuth={userAuth} updateUserAuth={updateUserAuth}>
+          <Component {...pageProps} updateUserAuth={updateUserAuth} userAuth={userAuth} />
+          </Layout>
 }
 
 export default MyApp

@@ -17,7 +17,7 @@ const date_formatted = date.toLocaleDateString('en-GB', {
         <h4 className={styles.cardTitle}>{post.title}</h4>
       </a>
     </div>
-    <Longtext limit={30} content={post.content} link={'/posts/' + post._id} />
+    <Longtext limit={40} content={post.content} link={'/posts/' + post._id} />
     <div className={styles.authorinfo}>
       <span><strong>{post.user.username}</strong></span>
       <span><b>Discovered {date_formatted} </b></span>

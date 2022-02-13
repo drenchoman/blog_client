@@ -4,8 +4,8 @@
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border-top: 4px solid #8b0000;
-  border-bottom: 4px solid #8b0000;
+  border-top: 1px solid #8b0000;
+  border-bottom: 1px solid #8b0000;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
   width: 100%;
@@ -19,19 +19,39 @@
   background: linear-gradient(164deg, rgba(255,190,128,0.6474964985994398) 4%, rgba(255,243,201,1) 24%, rgba(255,243,201,1) 74%, rgba(255,190,128,0.5802696078431373) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffbe80",endColorstr="#ffbe80",GradientType=1); */
 }
-.card:hover,
-.card:focus,
-.card:active {
+.longTextLink:hover,
+.longTextLink:focus,
+.longTextLink:active {
   color: #8b0000;
-  border-color: #8b0000;
+  text-decoration: underline;
+
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.cardTitle:hover,
+.cardTitle:focus,
+.cardTitle:active {
+  color: #8b0000;
+  text-decoration: underline;
 }
 
-.card p {
+.topCard{
+  margin: 1rem 1.5rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border-top: 1px solid #8b0000;
+  border-bottom: 1px solid #8b0000;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card p, .topCard p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
@@ -41,7 +61,7 @@
   margin: 0.5rem 0;
 }
 
-.cardTitle > h4{
+.cardTitle > h4, .cardTitle > h4{
   margin: 0;
 }
 
@@ -58,15 +78,11 @@
 }
 
 
-
-
-
-
-
 .rightSideContent{
   display: flex;
   flex-direction: column;
   text-align: center;
+
   margin: 1rem 0;
   border-top: 4px solid #8b0000;
   border-bottom: 4px solid #8b0000;

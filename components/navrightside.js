@@ -1,17 +1,21 @@
 import Image from 'next/image';
 import styles from '../styles/Nav.module.css';
 import nav from '../public/images/nav.svg';
+import x from '../public/images/x.svg';
 import { useEffect, useState } from 'react';
 import Loginform from '../components/loginform'
 
-export default function Navrightside({userAuth, updateUserAuth}){
+export default function Navrightside({userAuth, updateUserAuth, burgerClick, burgerClicked}){
 
   const [userAuthenticated, setuserAuthenticated] = useState(false);
   const [loginChecked, setLoginChecked] = useState(false);
 
+
   const handleClick = () => {
     setLoginChecked(!loginChecked)
   };
+
+
 
   useEffect(()=>{
     setuserAuthenticated(userAuth)
@@ -25,7 +29,7 @@ export default function Navrightside({userAuth, updateUserAuth}){
 
     try {
       const req = await fetch(
-        'http://localhost:5000/api/logout',
+        'https://glacial-thicket-60246.herokuapp.com/api/logout',
         {method: 'POST',}
       )
 
@@ -37,32 +41,44 @@ export default function Navrightside({userAuth, updateUserAuth}){
 
   if (userAuthenticated){
     return (
-      <div className={styles.signin}>
+
+      <div className={styles.signIn}>
         <button className={styles.logoutButton} onClick={handleSubmit}> Log out </button>
-      <div className={styles.navBurger}>
+      <div onClick={burgerClick} className={styles.navBurger}>
+
         <Image
         width={40}
         height={40}
-        src={nav}
+        src={burgerClicked ? x : nav}
         />
+
+
         </div>
+
       </div>
+
     )
   } else { return (
+<div>
     <div className={styles.signIn}>
       <button onClick={handleClick} className={styles.signinButton}>Log in </button>
     <a href='/register'>
       <button className={styles.registerButton}>Register </button>
     </a>
-    <div className={styles.navBurger}>
+    <div onClick={burgerClick} className={styles.navBurger}>
       <Image
       width={40}
       height={40}
-      src={nav}
+      src={burgerClicked ? x : nav}
       />
+
       </div>
-      {loginChecked && <Loginform className={styles.loginWrapper} formCard={styles.formCard} updateUserAuth={updateUserAuth}/>}
+
     </div>
+    {loginChecked && <div className={styles.modal}>
+    <Loginform className={styles.loginWrapper} formCard={styles.formCard} updateUserAuth={updateUserAuth} handleClick={handleClick} />
+     </div>}
+</div>
   )
 }
   }

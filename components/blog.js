@@ -18,7 +18,7 @@ export default function Blog({post, thumb}){
 
     try{
       const req = await fetch(
-        `http://localhost:5000/api/posts/${query.id}`,
+        `https://glacial-thicket-60246.herokuapp.com/api/posts/${query.id}`,
         {
           method: 'PUT',
           body: postid,
@@ -33,7 +33,7 @@ export default function Blog({post, thumb}){
 
         return;
       }
-      
+
     } catch(err){
 
     }

@@ -3,8 +3,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import React, {useState} from "react";
 import { useRouter } from "next/router";
+import styles from '../styles/Comment.module.css'
 
-export default function CommentReply(){
+export default function CommentReply({userAuth}){
 
   const {register, handleSubmit, reset, formState } = useForm();
   const {errors} = formState;
@@ -19,7 +20,7 @@ export default function CommentReply(){
 
     try{
       const req = await fetch(
-        `http://localhost:5000/api/posts/${query.id}/comments`,
+        `https://glacial-thicket-60246.herokuapp.com/api/posts/${query.id}/comments`,
         {
           method: 'POST',
           body: formData,
@@ -31,26 +32,25 @@ export default function CommentReply(){
       );
       const myJson = await req.json();
       if (req.status !== 200){
-        console.log(myJson);
         setErrStatus(true);
         setErrMessage(myJson.errors[0].msg)
         return;
       }
-      console.log("comment saved", myJson)
       reset();
     } catch(err){
-      console.log(err);
     }
   }
 
   return(
-    <div>
-      <form onSubmit={handleSubmit(submitForm)}>
-        <label htmlFor="comment">Comment</label>
+    <div className={styles.replyWrapper}>
+    {userAuth &&
+      <form className={styles.commentReply} onSubmit={handleSubmit(submitForm)}>
+        <label htmlFor="comment">Your Comment:</label>
         <input type="text" {...register("comment", {required: true})} />
         {errStatus && <span>{errMessage}</span>}
-        <input type="submit" />
+        <input className={styles.submitButton} type="submit" />
       </form>
+    }
     </div>
   )
 

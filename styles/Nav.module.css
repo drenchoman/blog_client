@@ -5,22 +5,63 @@
   justify-content: space-between;
   width: 100%;
   position: relative;
+  padding: 0 2rem;
+  background-color: #fff1c0;
+  margin-bottom: 1rem;
 }
 
 .loginWrapper{
-  position: absolute;
-  right: 2.5rem;
+
+  right: 10rem;
   top: 6rem;
+}
+
+.logo:hover, .logo:focus, .logo:active  {
+  text-decoration: underline;
+  color: #8b0000;
+}
+
+.loginWrapper > h2 {
+  color: #fff3c9;
+  border-bottom: 3px solid #fff3c9;
+  margin-bottom: 0.5rem;
 }
 
 .loginformCard{
   margin: 0;
 }
-
-.signin{
+.signinButton, .registerButton{
   display: flex;
-  width: 125px;
-  justify-content: space-between;
+  border: 1px solid #8b0000;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  width: 100px;
+  justify-content: center;
+  font-size: 1rem;
+  color: #fff3c9;
+  background-color: #8b0000;
+}
+
+.signinButton:hover, .registerButton:hover, .logoutButton:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.logoutButton{
+  display: flex;
+  border: 1px solid #8b0000;
+  margin: 0;
+  padding: 0.5rem;
+  width: 100px;
+  justify-content: center;
+  font-size: 1rem;
+  color: #fff3c9;
+  background-color: #8b0000;
+}
+
+.signIn{
+  display: flex;
+
 
 }
 
@@ -28,9 +69,78 @@
   display: none;
 }
 
-@media screen and (max-width: 414px){
+.burgerModal{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
-  .signinButton, .registerButton{
+}
+
+.modalOption{
+  display: flex;
+  border: 1px solid #8b0000;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  width: 100px;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff3c9;
+  background-color: #8b0000;
+}
+
+.modalOption:hover, .modalOption:focus{
+  background-color: #fff3c9;
+  color: #8b0000;
+}
+
+
+.animatePop{
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+  animation-delay: 0.2s;
+  animation-fill-mode: backwards;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+
+.modal{
+  background-color: #8b0000;
+  animation: fadeIn 0.4s linear;
+  padding: 2rem;
+position: absolute;
+right: 2rem;
+top: 6rem;
+color: #fff3c9;
+
+}
+
+@keyframes animate-pop {
+  0%{
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+
+
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 720px){
+
+  .signinButton, .registerButton, .logoutButton, .logoutButton{
     display: none;
   }
   .navBurger{
@@ -38,10 +148,27 @@
 
   }
   .signin{
-    width: 30%;
-    justify-content: center;
-    align-items: center;
+    /* width: 20%; */
+    justify-content: flex-end;
+    align-items: flex-end;
 
+  }
+}
+
+
+@media screen and (max-width: 414px){
+
+  .signinButton, .registerButton, .logoutButton, .logoutButton{
+    display: none;
+  }
+  .navBurger{
+    display: block;
+
+  }
+  .signIn{
+    /* width: 20%; */
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 
@@ -54,10 +181,10 @@
     display: block;
   }
 
-    .signin{
-      width: 30%;
-      justify-content: center;
-      align-items: center;
+    .signIn{
+      /* width: 20%; */
+      justify-content: flex-end;
+      align-items: flex-end;
 
 
   }
@@ -65,17 +192,17 @@
 
 @media screen and (max-width: 325px){
 
-  .signinButton, .registerButton, .logoutButton{
+  .signinButton, .registerButton, .logoutButton, .logoutButton{
     display: none;
   }
   .navBurger{
     display: block;
 
   }
-  .signin{
-    width: 30%;
-    justify-content: center;
-    align-items: center;
+  .signIn{
+    /* width: 20%; */
+    justify-content: flex-end;
+    align-items: flex-end;
 
 
 }

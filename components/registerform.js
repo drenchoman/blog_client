@@ -30,7 +30,7 @@ export default function Registerform(){
    const formData = JSON.stringify(data);
    try {
      const req = await fetch(
-       'http://localhost:5000/api/register',
+       'https://glacial-thicket-60246.herokuapp.com/api/register',
        {
          method: 'post',
          body: formData,

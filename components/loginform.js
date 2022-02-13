@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-export default function Loginform({updateUserAuth, className, formCard}){
+export default function Loginform({updateUserAuth, className, formCard,}){
 
   const [logErr, setLogErr] = useState(false);
   const [errMessage, setErrMessage] = useState('')
@@ -27,7 +27,7 @@ export default function Loginform({updateUserAuth, className, formCard}){
    const formData = JSON.stringify(data);
    try {
      const req = await fetch(
-       'http://localhost:5000/api/login',
+       'https://glacial-thicket-60246.herokuapp.com/api/login',
        {
          method: 'post',
          body: formData,
@@ -43,7 +43,6 @@ export default function Loginform({updateUserAuth, className, formCard}){
        setLogErr(true);
        return;
      }
-     console.log("SAVED", myJson);
      updateUserAuth(true);
      localStorage.setItem("token", myJson.token);
      localStorage.setItem("userAuth", true);

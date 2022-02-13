@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import styles from '../styles/Post.module.css'
 
 export default function Longtext({content, limit, link}){
 
@@ -8,9 +9,9 @@ export default function Longtext({content, limit, link}){
     return <p> {content}</p>
   }
   return(
-  <div>
+  <div className={styles.longTextWrapper}>
     <p>{toShow}</p>
-    <a href={link}>
+    <a className={styles.longTextLink} href={link}>
     Read more
     </a>
   </div>
