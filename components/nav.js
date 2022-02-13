@@ -19,6 +19,7 @@ const burgerClick = () => {
     <nav className={`${styles.navwrapper} ${animations.animateFade}`}>
       <div className={styles.logo}>
         <Link href='/'>
+        <a>
           <h1 className={className}>{text}</h1>
         </a>
       </div>
@@ -30,12 +31,16 @@ const burgerClick = () => {
       <div className={`${styles.burgerModal} ${styles.animatePop}`}>
         <div className={styles.modalOption}>
           <Link href='/login'>
+          <a>
             Login
+          </a>
           </Link>
         </div>
         <div className={styles.modalOption}>
           <Link href='/register'>
+          <a>
             Register
+            </a>
           </Link>
         </div>
       </div>

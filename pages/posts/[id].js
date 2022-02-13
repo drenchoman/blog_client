@@ -60,7 +60,9 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
             </div>
             <div className={styles.commentHelpButtons}>
             <Link href='/register'>
+            <a>
               <button className={styles.helpButtons}>Register </button>
+              </a>
             </Link>
               <button className={styles.helpButtons} onClick={handleClick}>Log in </button>
 

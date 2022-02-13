@@ -12,7 +12,9 @@ export default function Longtext({content, limit, link}){
   <div className={styles.longTextWrapper}>
     <p>{toShow}</p>
     <Link className={styles.longTextLink} href={link}>
+    <a>
     Read more
+    </a>
     </Link>
   </div>
 )

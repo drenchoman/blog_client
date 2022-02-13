@@ -64,7 +64,9 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
     <div className={styles.signIn}>
       <button onClick={handleClick} className={styles.signinButton}>Log in </button>
     <Link href='/register'>
+    <a>
       <button className={styles.registerButton}>Register </button>
+      </a>
     </Link>
     <div onClick={burgerClick} className={styles.navBurger}>
       <Image

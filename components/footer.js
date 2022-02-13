@@ -10,15 +10,19 @@ export default function Footer({}){
       <div>
         <div className={styles.contentWrapper}>
         <Link href='https://github.com/drenchoman/drenchoman'>
+        <a>
           <span>Drenchoman</span>
+        </a>
         </Link>
         <Link href='https://github.com/drenchoman/drenchoman'>
+          <a>
             <Image
             height={30}
             width={30}
             alt="Link to Drenchoman Github"
             src={github}
             />
+          </a>
           </Link>
         </div>
       </div>

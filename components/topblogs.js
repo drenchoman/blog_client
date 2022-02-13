@@ -16,7 +16,9 @@ return(
     <div key={index} className={`${styles.topCard} ${animations.animateFade} ${animations.delay3}`}>
       <div>
       <Link href={'/posts/' + post._id}>
+      <a>
         <h4 className={styles.cardTitle}>{post.title}</h4>
+        </a>
       </Link>
     </div>
     <Longtext limit={30} content={post.content} link={'/posts/' + post._id} />
