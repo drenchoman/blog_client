@@ -46,7 +46,6 @@ export default function Registerform(){
        setRegErr(true);
        return;
      }
-     console.log("SAVED", data)
      reset();
      window.location.href = '/login'
    } catch(err){

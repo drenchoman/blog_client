@@ -13,6 +13,7 @@ export default function Comments({comment, thumb, index}){
     minute: "2-digit",
   });
 
+
 const updateLike = async (e) => {
   const idobject= {
   }
@@ -44,8 +45,14 @@ const updateLike = async (e) => {
 }
 
 
+if (comment === 'undefined' || null){
   return(
-
+    <div>
+    <span> It appears there are no remarks. Hmph. </span>
+    <span>{comment}</span>
+    </div>
+  )
+} return (
     <div className={styles.commentCard} key={index}>
       <div>
         <h4>{comment.user.username} says...</h4>

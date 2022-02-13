@@ -112,7 +112,7 @@ export async function getStaticProps({params}) {
   const res = await fetch (`https://glacial-thicket-60246.herokuapp.com/api/posts/${params.id}`);
   const post = await res.json();
 
-  const response = await fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts${params.id}/comments`);
+  const response = await fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts/${params.id}/comments`);
   const comments = await response.json();
 
 
