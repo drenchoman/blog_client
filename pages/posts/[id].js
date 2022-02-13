@@ -11,7 +11,7 @@ import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
 import { useRouter } from "next/router";
 import Loginform from '../../components/loginform'
-
+import Link from 'next/link'
 
 
 function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
@@ -59,9 +59,9 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
             <span>To submit a comment- please log in or register </span>
             </div>
             <div className={styles.commentHelpButtons}>
-            <a href='/register'>
+            <Link href='/register'>
               <button className={styles.helpButtons}>Register </button>
-            </a>
+            </Link>
               <button className={styles.helpButtons} onClick={handleClick}>Log in </button>
 
 

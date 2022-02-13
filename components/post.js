@@ -1,5 +1,6 @@
 import styles from '../styles/Post.module.css'
 import Longtext from '../components/longtext'
+import Link from 'next/link'
 
 function Post({post}) {
 const date = new Date(post.timeStamp);
@@ -13,9 +14,9 @@ const date_formatted = date.toLocaleDateString('en-GB', {
   return(
   <div key={post._id} className={styles.card}>
     <div className={styles.cardTitle}>
-      <a href={'/posts/' + post._id}>
+      <Link href={'/posts/' + post._id}>
         <h4 className={styles.cardTitle}>{post.title}</h4>
-      </a>
+      </Link>
     </div>
     <Longtext limit={40} content={post.content} link={'/posts/' + post._id} />
     <div className={styles.authorinfo}>

@@ -1,6 +1,7 @@
 import styles from '../styles/Post.module.css'
 import Longtext from '../components/longtext'
 import animations from '../styles/Animations.module.css'
+import Link from 'next/link'
 
 export default function Topblogs({post, index}){
 
@@ -14,9 +15,9 @@ export default function Topblogs({post, index}){
 return(
     <div key={index} className={`${styles.topCard} ${animations.animateFade} ${animations.delay3}`}>
       <div>
-      <a href={'/posts/' + post._id}>
+      <Link href={'/posts/' + post._id}>
         <h4 className={styles.cardTitle}>{post.title}</h4>
-      </a>
+      </Link>
     </div>
     <Longtext limit={30} content={post.content} link={'/posts/' + post._id} />
     <div className={styles.authorinfo}>

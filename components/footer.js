@@ -1,7 +1,7 @@
 import styles from '../styles/Footer.module.css';
 import Image from 'next/image';
 import github from '../public/images/github.svg'
-
+import Link from 'next/link'
 
 export default function Footer({}){
 
@@ -9,17 +9,17 @@ export default function Footer({}){
     <footer className={styles.footerWrapper}>
       <div>
         <div className={styles.contentWrapper}>
-        <a href='https://github.com/drenchoman/drenchoman'>
+        <Link href='https://github.com/drenchoman/drenchoman'>
           <span>Drenchoman</span>
-        </a>
-        <a href='https://github.com/drenchoman/drenchoman'>
+        </Link>
+        <Link href='https://github.com/drenchoman/drenchoman'>
             <Image
             height={30}
             width={30}
             alt="Link to Drenchoman Github"
             src={github}
             />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

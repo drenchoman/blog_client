@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link'
 import styles from '../styles/Nav.module.css';
 import nav from '../public/images/nav.svg';
 import x from '../public/images/x.svg';
@@ -62,9 +63,9 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
 <div>
     <div className={styles.signIn}>
       <button onClick={handleClick} className={styles.signinButton}>Log in </button>
-    <a href='/register'>
+    <Link href='/register'>
       <button className={styles.registerButton}>Register </button>
-    </a>
+    </Link>
     <div onClick={burgerClick} className={styles.navBurger}>
       <Image
       width={40}

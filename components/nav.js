@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Nav.module.css'
 import animations from '../styles/Animations.module.css'
 import nav from '../public/images/nav.svg'
@@ -17,7 +18,7 @@ const burgerClick = () => {
     <>
     <nav className={`${styles.navwrapper} ${animations.animateFade}`}>
       <div className={styles.logo}>
-        <a href='/'>
+        <Link href='/'>
           <h1 className={className}>{text}</h1>
         </a>
       </div>
@@ -28,14 +29,14 @@ const burgerClick = () => {
     {burgerClicked &&
       <div className={`${styles.burgerModal} ${styles.animatePop}`}>
         <div className={styles.modalOption}>
-          <a href='/login'>
+          <Link href='/login'>
             Login
-          </a>
+          </Link>
         </div>
         <div className={styles.modalOption}>
-          <a href='/register'>
+          <Link href='/register'>
             Register
-          </a>
+          </Link>
         </div>
       </div>
     }
