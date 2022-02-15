@@ -3,11 +3,13 @@ import styles from "../styles/Register.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
+import { useRouter } from 'next/router';
 
 export default function Loginform({updateUserAuth, className, formCard, redirect}){
-
+  const router = useRouter();
   const [logErr, setLogErr] = useState(false);
   const [errMessage, setErrMessage] = useState('')
+
 
   const validationSchema = Yup.object().shape({
     username: Yup.string()
@@ -45,11 +47,14 @@ export default function Loginform({updateUserAuth, className, formCard, redirect
        return;
      }
      await updateUserAuth(true);
-     localStorage.setItem("token", myJson.token);
-     localStorage.setItem("userAuth", true);
-     localStorage.setItem("username", myJson.body.username);
-     localStorage.setItem("id", myJson.body._id);
+     await localStorage.setItem("token", myJson.token);
+     await localStorage.setItem("userAuth", true);
+     await localStorage.setItem("username", myJson.body.username);
+     await localStorage.setItem("id", myJson.body._id);
 
+     if(redirect){
+       router.push('/')
+     }
    } catch(err){
      console.log(err);
    }

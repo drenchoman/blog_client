@@ -12,8 +12,13 @@ function MyApp({ Component, pageProps }) {
   });
 
   useEffect(() =>{
-    // let isMounted = true;
-    localStorage.setItem("userAuth", JSON.stringify(userAuth))
+    let isMounted = true;
+    (async () => {
+    if (isMounted) {
+        await localStorage.setItem("userAuth", JSON.stringify(userAuth))
+      }
+    })()
+    return () => isMounted = false;
   }, [userAuth])
 
 const updateUserAuth = (boolean) => {

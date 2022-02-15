@@ -50,7 +50,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
       <Head>
         <title>{firstpost.title}</title>
         <meta name="description" content={firstpost.content}/>
-        <link rel="icon" href="/public/images/favicon.ico" />
+        <link rel="icon" href="/public/favicon/favicon.ico" />
       </Head>
       <div className={styles.container}>
       <div className={styles.blogWrapper}>

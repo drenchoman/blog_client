@@ -85,18 +85,18 @@ if(userAuthenticated){
     </nav>
     {burgerClicked &&
       <div className={styles.burgerModal }>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${animations.delay1} ${styles.animatePop}`}>
-          <Link href='/login'>
-          <a>
-            Login
-          </a>
-          </Link>
-        </div>
         <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animatePop} ${animations.delay1}`}>
           <Link href='/register'>
           <a>
             Register
             </a>
+          </Link>
+        </div>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${styles.animatePop}`}>
+          <Link href='/login'>
+          <a>
+            Login
+          </a>
           </Link>
         </div>
       </div>

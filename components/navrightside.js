@@ -68,7 +68,7 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
 
     </div>
     {loginChecked && <div className={styles.modal}>
-    <Loginform className={styles.loginWrapper} formCard={styles.formCard} updateUserAuth={updateUserAuth} handleClick={handleClick} />
+    <Loginform className={styles.loginWrapper} formCard={styles.formCard} updateUserAuth={updateUserAuth}  />
      </div>}
 </div>
   )
