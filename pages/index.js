@@ -30,7 +30,7 @@ const topThreePosts = topPosts.slice(0, 3);
       <div className={styles.welcomeWrapper}>
         <div className={styles.welcomeContainer}>
         <Subheader className={styles.subheaderDiv} text='Etchings From Premodernity' />
-        <Ship shipImage={shipImage} />
+        <Ship shipImage={shipImage} className={styles.welcomeImagediv} />
         </div>
         <div className={styles.topPostsWrapper}>
           <h3 className={`${animations.animateFade} ${animations.delay2}`}>Top Volumes</h3>
@@ -41,7 +41,7 @@ const topThreePosts = topPosts.slice(0, 3);
 
       </div>
       <hr/>
-      <Ship filter={styles.blueFilter} shipImage={blueShip} />
+      <Ship filter={styles.blueFilter} shipImage={blueShip} className={styles.welcomeImagediv} />
       <hr/>
       <div className={styles.postsWrapper}>
         <div className={styles.postsHeader}>

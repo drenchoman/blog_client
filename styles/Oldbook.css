@@ -16,6 +16,14 @@ a {
   box-sizing: border-box;
 }
 
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"] {
+     -webkit-appearance: none;
+     border-radius: 0;
+}
+
 h1 {
 	font-family: "IM Fell DW Pica SC", serif;
 	color: #8b0000;

@@ -51,6 +51,26 @@ filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%
   margin-bottom: 2rem;
 }
 
+.homeButton{
+  align-self: center;
+    display: flex;
+    border: 1px solid #00468b;
+    margin: 0.5rem 0 1.5rem 0;;
+    padding: 0.5rem;
+    width: 100px;
+    justify-content: center;
+    font-size: 1rem;
+    color: #fff3c9;
+  background-color: #00468b;
+}
+
+.homeButton:hover,
+.homeButton:focus,
+.homeButton:active{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .welcomeContainer{
   display: flex;
 width: 100%;
@@ -84,6 +104,14 @@ padding-bottom: 3.5rem;
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.sadmanImage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .postImagediv{
@@ -384,6 +412,7 @@ flex-direction: column;
   .blogDiv{
     order: 2;
     margin-bottom: 4rem;
+    padding: 0;
   }
   .topPostsWrapper{
     width: 60%;
@@ -485,6 +514,7 @@ flex-direction: column;
   .blogDiv{
     order: 3;
     margin-bottom: 4rem;
+    padding: 0;
   }
   .topPostsWrapper{
     width: 100%;
@@ -526,6 +556,7 @@ flex-direction: column;
   .blogDiv{
     order: 3;
       margin-bottom: 4rem;
+      padding: 0;
   }
   .subheaderDiv, .topPostsWrapper{
     border: 0;
@@ -570,6 +601,7 @@ flex-direction: column;
   .blogDiv{
     order: 3;
       margin-bottom: 4rem;
+      padding: 0;
   }
   .subheaderDiv, .topPostsWrapper{
     border: 0;
@@ -622,6 +654,7 @@ flex-direction: column;
   .blogDiv{
     order: 3;
       margin-bottom: 4rem;
+      padding: 0;
   }
   .topPostsWrapper{
     width: 100%;

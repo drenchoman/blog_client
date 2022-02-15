@@ -3,9 +3,9 @@ import styles from '../styles/Home.module.css'
 import animations from '../styles/Animations.module.css'
 
 
-export default function Ship({shipImage, filter}){
+export default function Ship({shipImage, filter, className}){
   return(
-    <div className={`${styles.welcomeImagediv} ${animations.animateFade} ${animations.delay1} ${filter} `}>
+    <div className={`${className} ${animations.animateFade} ${animations.delay1} ${filter} `}>
       <Image
         width={500}
         height={500}

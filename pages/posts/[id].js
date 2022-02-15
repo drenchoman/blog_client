@@ -11,6 +11,7 @@ import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
 import { useRouter } from "next/router";
 import shipImage from '../../public/images/vintageship-min.svg'
+import chair from '../../public/images/sadoldman.svg'
 import Loginform from '../../components/loginform'
 import Link from 'next/link'
 
@@ -88,13 +89,24 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
               <Loginform className={styles.loginComments} loginForm={styles.formCard}  updateUserAuth={updateUserAuth}/>
             }
           </div> }
+
             <h3>Remarks</h3>
           {currentComments.map((comment, index) =>(
 
             <Comments userAuth={userAuth} key={index} thumb={thumb} comment={comment} />
           ))}
           <CommentReply userAuth={userAuth}  />
+
+
+          <Ship className={styles.sadmanImage} shipImage={chair} />
+          <Link href='/'>
+            <a>
+              <button className={styles.homeButton}>Home</button>
+            </a>
+          </Link>
+
         </div>
+
 
         </div>
 
