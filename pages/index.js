@@ -17,9 +17,14 @@ const topThreePosts = topPosts.slice(0, 3);
   return (
     <>
       <Head>
-        <title>Ye Olde Diary</title>
+        <title>Ye Olde Diary | Etchings From Premodernity</title>
         <meta name="description" content="Rediscover lost texts and gain insight from a forgotten time in history" />
-        <link rel="icon" href="./public/favicon/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+         <link rel="manifest" href="/site.webmanifest" />
+         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fff3c9" />
+         <meta name="theme-color" content="#ffffff" />
       </Head>
       <div className={styles.container}>
       <div className={styles.welcomeWrapper}>
