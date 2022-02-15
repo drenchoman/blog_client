@@ -62,11 +62,11 @@ export default function Loginform({updateUserAuth, className, formCard,}){
 
       <form className={styles.formRegister} onSubmit={handleSubmit(submitForm)}>
         <label htmlFor="username">Username</label>
-        <input className={`${errors.username ? styles.isInvalid : ''}`} placeholder="Thomas Aquinas" {...register("username")}  />
+        <input className={`${errors.username ? styles.isInvalid : styles.valid}`} placeholder="Thomas Aquinas" {...register("username")}  />
           <div className={`${errors.username ? styles.isInvalid : ''}`}>{errors.username?.message}</div>
 
         <label  htmlFor="password">Password</label>
-        <input className={`${errors.password ? styles.isInvalid : ''}`} placeholder="Hunter2" type="password" {...register("password")} />
+        <input className={`${errors.password ? styles.isInvalid : styles.valid}`} placeholder="Hunter2" type="password" {...register("password")} />
           <div className={`${errors.password ? styles.isInvalid : ''}`}>{errors.password?.message}</div>
         <input className={styles.submit} type="submit" />
         {logErr && <span>{errMessage}</span>}

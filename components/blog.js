@@ -1,20 +1,33 @@
 import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { useRouter } from "next/router";
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 export default function Blog({post, thumb}){
   const {query} = useRouter();
   const [likeClicked, setLikeClicked]= useState(false);
 
+
+  const checkIfLiked = (id) => {
+    if(post.likes.includes(id)){
+      setLikeClicked(true);
+    }
+  };
+
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    checkIfLiked(id)
+  }, [])
+
   const updateLike = async (e) => {
+    setLikeClicked(!likeClicked);
     const idobject= {
       postid: e.target.id
     }
     const postid = JSON.stringify(idobject)
     const token = localStorage.getItem("token");
     const bearer = `Bearer ${token}`;
-    setLikeClicked(!likeClicked);
+
 
     try{
       const req = await fetch(
@@ -52,7 +65,7 @@ export default function Blog({post, thumb}){
         <span>Impressed with your finding?</span>
         <span>Consider giving it a like</span>
       </div>
-      <div className={styles.blogfooterLikebutton}>
+      <div className={likeClicked ? styles.blogfooterLikebuttonLiked : styles.blogfooterLikebutton}>
         <Image
           width={50}
           height={50}
@@ -61,7 +74,7 @@ export default function Blog({post, thumb}){
           id={post._id}
           onClick={updateLike}
         />
-      {likeClicked && <div>Thank you good sir</div>}
+      {likeClicked && <div className={styles.thankyou}>Merci!</div>}
       </div>
     </div>
   </div>

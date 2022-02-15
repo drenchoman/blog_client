@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import styles from '../../styles/Home.module.css'
 import Subheader from '../../components/subheader'
 import Ship from '../../components/ship'
@@ -10,6 +10,7 @@ import CommentReply from '../../components/commentReply'
 import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
 import { useRouter } from "next/router";
+import shipImage from '../../public/images/vintageship-min.svg'
 import Loginform from '../../components/loginform'
 import Link from 'next/link'
 
@@ -25,13 +26,23 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
     setLoginChecked(!loginChecked)
   }
 
+
   useEffect(() => {
-    fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts/${query.id}/comments`)
-    .then((res) => res.json())
-    .then((data) => {
-      setCurrentComments(data)
-    })
+    let mounted = true;
+    (async () => {
+      const res = await fetch(`https://glacial-thicket-60246.herokuapp.com/api/posts/${query.id}/comments`);
+        if (mounted) {
+          // Only update comments if mounted // perhaps use AbortController in future
+          const data = await res.json();
+          setCurrentComments(data);
+        }
+    })()
+
+    // Clean up function of unmounted
+    return () => mounted = false;
+
   }, [currentComments])
+
 
 
   return(
@@ -44,7 +55,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
       <div className={styles.container}>
       <div className={styles.blogWrapper}>
         <div className={styles.leftsideBar}>
-          <Ship className={styles.postImagediv} />
+          <Ship className={styles.postImagediv} shipImage={shipImage} />
         </div>
         <div className={styles.blogDiv}>
           {firstpost.map((post, index) => (

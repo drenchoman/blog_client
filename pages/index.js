@@ -7,6 +7,8 @@ import script from '../public/images/script.jpg'
 import Post from '../components/post'
 import Ship from '../components/ship'
 import Topblogs from '../components/topblogs'
+import shipImage from '../public/images/vintageship-min.svg'
+import blueShip from '../public/images/chair.svg'
 
 function Home({posts, topPosts, userAuth, updateUserAuth}) {
 
@@ -23,7 +25,7 @@ const topThreePosts = topPosts.slice(0, 3);
       <div className={styles.welcomeWrapper}>
         <div className={styles.welcomeContainer}>
         <Subheader className={styles.subheaderDiv} text='Etchings From Premodernity' />
-        <Ship />
+        <Ship shipImage={shipImage} />
         </div>
         <div className={styles.topPostsWrapper}>
           <h3 className={`${animations.animateFade} ${animations.delay2}`}>Top Volumes</h3>
@@ -33,6 +35,8 @@ const topThreePosts = topPosts.slice(0, 3);
         </div>
 
       </div>
+      <hr/>
+      <Ship filter={styles.blueFilter} shipImage={blueShip} />
       <hr/>
       <div className={styles.postsWrapper}>
         <div className={styles.postsHeader}>

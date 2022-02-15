@@ -13,12 +13,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* background: rgb(255,190,128);
-  background: -moz-linear-gradient(164deg, rgba(255,190,128,0.6474964985994398) 4%, rgba(255,243,201,1) 24%, rgba(255,243,201,1) 74%, rgba(255,190,128,0.5802696078431373) 100%);
-  background: -webkit-linear-gradient(164deg, rgba(255,190,128,0.6474964985994398) 4%, rgba(255,243,201,1) 24%, rgba(255,243,201,1) 74%, rgba(255,190,128,0.5802696078431373) 100%);
-  background: linear-gradient(164deg, rgba(255,190,128,0.6474964985994398) 4%, rgba(255,243,201,1) 24%, rgba(255,243,201,1) 74%, rgba(255,190,128,0.5802696078431373) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffbe80",endColorstr="#ffbe80",GradientType=1); */
-}
+  position: relative;
+  }
 .longTextLink:hover,
 .longTextLink:focus,
 .longTextLink:active {
@@ -49,6 +45,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
 }
 
 .card p, .topCard p {
@@ -87,4 +84,18 @@
   border-top: 4px solid #8b0000;
   border-bottom: 4px solid #8b0000;
   padding: 1rem;
+}
+
+.commentWrapper{
+  position: absolute;
+  bottom: 1.8rem;
+  left: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.commentWrapper > span {
+  margin: 0 0.25rem;
+
+
 }

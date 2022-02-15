@@ -11,7 +11,7 @@
 }
 
 /* .blueFilter{
-filter: invert(75%) sepia(1%) saturate(0%) hue-rotate(37deg) brightness(95%) contrast(95%);} */
+filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%) contrast(104%);} */
 
 .etchings > h2 {
   font-size: 3rem;
@@ -42,12 +42,14 @@ filter: invert(75%) sepia(1%) saturate(0%) hue-rotate(37deg) brightness(95%) con
 
 .welcomeWrapper{
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .welcomeContainer{
   display: flex;
 width: 100%;
-flex-direction: row;
+flex-direction: column;
+justify-content: center;
 
 
 }
@@ -57,8 +59,9 @@ flex-direction: row;
   align-items:center;
   justify-content: center;
   width: 100%;
+
   flex-direction: column;
-  border-right: 1px solid #8b0000;
+  /* border-right: 1px solid #8b0000; */
   margin: 1rem 0;
 }
 .subheaderLeftSide{
@@ -182,6 +185,10 @@ flex-direction: row;
   margin-left: 0.5rem;
 }
 
+.thankyou{
+position: absolute;
+right: 4rem;
+}
 
 /* BLOG WRAPPER */
 
@@ -263,6 +270,16 @@ flex-direction: row;
 
 }
 
+.blogfooterLikebuttonLiked{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
+
+}
+
 .blogfooterLikebutton{
   display: flex;
   flex-direction: column;
@@ -274,7 +291,8 @@ flex-direction: row;
 
 }
 
-.blogfooterLikebutton:hover{
+.blogfooterLikebutton:hover,
+.blogfooterLikebuttonLiked:hover{
   transform: scale(1.1);
   cursor:pointer;
 }
@@ -361,6 +379,9 @@ flex-direction: column;
   .etchings > p {
     font-size: 1rem;
   }
+  .thankyou{
+    right: 0.2rem;
+  }
 }
 
 @media screen and (max-width: 414px){
@@ -396,6 +417,9 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+  }
+  .thankyou{
+    right: 0.2rem;
   }
 }
 
@@ -433,6 +457,9 @@ flex-direction: column;
   .etchings > p {
     font-size: 1rem;
   }
+  .thankyou{
+    right: 0.2rem;
+  }
 }
 
 @media screen and (max-width: 325px){
@@ -468,5 +495,8 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+  }
+  .thankyou{
+    right: 0.2rem;
   }
 }

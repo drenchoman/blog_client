@@ -2,6 +2,8 @@ import styles from '../styles/Post.module.css'
 import Longtext from '../components/longtext'
 import animations from '../styles/Animations.module.css'
 import Link from 'next/link'
+import commentImage from '../public/images/comment.svg'
+import Image from 'next/image'
 
 export default function Topblogs({post, index}){
 
@@ -25,7 +27,17 @@ return(
     <div className={styles.authorinfo}>
       <span><strong>{post.user.username}</strong></span>
       <span><b>Discovered {date_formatted} </b></span>
+      <div className={styles.commentWrapper}>
+        <Image
+        src={commentImage}
+        width={20}
+        height={20}
+        alt='Comments'
+         />
+         <span>{post.comments.length} </span>
+      </div>
     </div>
+
     </div>
 
 )

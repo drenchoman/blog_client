@@ -15,6 +15,16 @@ export default function Comments({comment, thumb, index}){
 
   const [likeClicked, setLikeClicked]= useState(false);
 
+const checkLikedComments = (id) => {
+  if(comment.likes.includes(id)){
+    setLikeClicked(true)
+  }
+};
+
+useEffect(() =>{
+  const id = localStorage.getItem("id");
+  checkLikedComments(id);
+}, [])
 
 const updateLike = async (e) => {
   setLikeClicked(!likeClicked)
@@ -49,7 +59,7 @@ const updateLike = async (e) => {
 }
 
 
-if (comment === 'undefined' || null){
+if (comment === 'undefined' || null || comment.length == 0){
   return(
     <div>
     <span> It appears there are no remarks. Hmph. </span>
@@ -65,7 +75,7 @@ if (comment === 'undefined' || null){
       <div className={styles.likeCount}>
         <span>Likes: {comment.likeCount}</span>
       </div>
-      <div className={likeClicked ? styles.thumbsup : styles.likedComment} >
+      <div className={likeClicked ? styles.likedComment : styles.thumbsup } >
 
         <Image
           width={30}

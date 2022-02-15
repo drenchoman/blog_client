@@ -1,6 +1,8 @@
 import styles from '../styles/Post.module.css'
 import Longtext from '../components/longtext'
 import Link from 'next/link'
+import commentImage from '../public/images/comment.svg'
+import Image from 'next/image'
 
 function Post({post}) {
 const date = new Date(post.timeStamp);
@@ -24,6 +26,15 @@ const date_formatted = date.toLocaleDateString('en-GB', {
     <div className={styles.authorinfo}>
       <span><strong>{post.user.username}</strong></span>
       <span><b>Discovered {date_formatted} </b></span>
+      <div className={styles.commentWrapper}>
+        <Image
+        src={commentImage}
+        width={15}
+        height={15}
+        alt='Comments'
+         />
+         <span>{post.comments.length} </span>
+      </div>
     </div>
   </div>
 )

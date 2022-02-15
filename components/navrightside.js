@@ -22,23 +22,15 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
     setuserAuthenticated(userAuth)
   },[userAuth])
 
-  const handleSubmit = async () => {
-    // const timeOut = setTimeout(updateUserAuth, 1000);
+  const handleSubmit = () => {
+    // Dont need to call /api/logout as using token instead of session
+
     localStorage.clear();
-    updateUserAuth(false);
     localStorage.setItem("userAuth", false);
-
-    try {
-      const req = await fetch(
-        'https://glacial-thicket-60246.herokuapp.com/api/logout',
-        {method: 'POST',}
-      )
-
-    } catch(err){
-      console.log(err);
-    }
+    updateUserAuth(false);
 
   }
+
 
   if (userAuthenticated){
     return (
@@ -65,7 +57,7 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
       <button onClick={handleClick} className={styles.signinButton}>Log in </button>
     <Link href='/register'>
     <a>
-      <button className={styles.registerButton}>Register </button>
+      <button onClick={() => setLoginChecked(false)} className={styles.registerButton}>Register </button>
       </a>
     </Link>
     <div onClick={burgerClick} className={styles.navBurger}>
