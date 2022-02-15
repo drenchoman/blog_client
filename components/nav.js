@@ -9,11 +9,27 @@ import Navrightside from '../components/navrightside'
 export default function Nav({text, className, userAuth, updateUserAuth}){
 
 const [burgerClicked, setBurgerClicked] = useState(false);
+  const [userAuthenticated, setuserAuthenticated] = useState(false);
 
 const burgerClick = () => {
   setBurgerClicked(!burgerClicked)
 };
 
+const handleSubmit = () => {
+  // Dont need to call /api/logout as using token instead of session
+
+  localStorage.clear();
+  localStorage.setItem("userAuth", false);
+  updateUserAuth(false);
+  setBurgerClicked(false);
+
+}
+
+useEffect(()=>{
+  setuserAuthenticated(userAuth)
+},[userAuth])
+
+if(userAuthenticated){
   return(
     <>
     <nav className={`${styles.navwrapper} ${animations.animateFade}`}>
@@ -26,19 +42,57 @@ const burgerClick = () => {
       </div>
 
 
-        <Navrightside userAuth={userAuth} updateUserAuth={updateUserAuth} burgerClick={burgerClick} burgerClicked={burgerClicked} />
+      <Navrightside userAuth={userAuth} updateUserAuth={updateUserAuth} burgerClick={burgerClick} burgerClicked={burgerClicked} userAuthenticated={userAuthenticated} />
 
     </nav>
     {burgerClicked &&
       <div className={styles.burgerModal }>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.delay1} ${styles.animatePop}`}>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animatePop} ${animations.delay1}`}>
+          <Link href='/register'>
+          <a>
+            Register
+            </a>
+          </Link>
+        </div>
+        <div onClick={handleSubmit} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${styles.animatePop}`}>
+          <Link href='/'>
+          <a>
+            Logout
+          </a>
+          </Link>
+        </div>
+
+      </div>
+    }
+  </>
+
+  )
+} else{
+  return(
+    <>
+    <nav className={`${styles.navwrapper} ${animations.animateFade}`}>
+      <div className={styles.logo}>
+        <Link href='/'>
+        <a>
+          <h1 className={className}>{text}</h1>
+        </a>
+        </Link>
+      </div>
+
+
+      <Navrightside userAuth={userAuth} updateUserAuth={updateUserAuth} burgerClick={burgerClick} burgerClicked={burgerClicked} userAuthenticated={userAuthenticated} />
+
+    </nav>
+    {burgerClicked &&
+      <div className={styles.burgerModal }>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${animations.delay1} ${styles.animatePop}`}>
           <Link href='/login'>
           <a>
             Login
           </a>
           </Link>
         </div>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animatePop} ${styles.delay1}`}>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animatePop} ${animations.delay1}`}>
           <Link href='/register'>
           <a>
             Register
@@ -49,4 +103,5 @@ const burgerClick = () => {
     }
   </>
   )
+}
 }

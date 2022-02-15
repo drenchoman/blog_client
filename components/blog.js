@@ -2,24 +2,45 @@ import styles from '../styles/Home.module.css'
 import Image from 'next/image'
 import { useRouter } from "next/router";
 import {useState, useEffect} from 'react';
+import Registermodal from '../components/registermodal'
 
-export default function Blog({post, thumb}){
+export default function Blog({post, thumb, userAuth}){
   const {query} = useRouter();
   const [likeClicked, setLikeClicked]= useState(false);
-
+  const [isAuthorised, setIsAuthorised]= useState(userAuth)
+  const [message, setMessage]=useState('');
+  const [warning, setWarning]=useState(false);
 
   const checkIfLiked = (id) => {
     if(post.likes.includes(id)){
       setLikeClicked(true);
+    } else{
+      setLikeClicked(false);
     }
   };
+
+  const checkLoggedIn = () =>{
+    if(userAuth){
+      setWarning(false);
+      setMessage('');
+    } else{
+      setIsAuthorised(userAuth)
+    }
+  }
+
 
   useEffect(() => {
     const id = localStorage.getItem("id");
     checkIfLiked(id)
-  }, [])
+    checkLoggedIn();
+  }, [userAuth])
 
   const updateLike = async (e) => {
+    if(!isAuthorised){
+      setMessage('Log in to add a like')
+      setWarning(true);
+      return;
+    }
     setLikeClicked(!likeClicked);
     const idobject= {
       postid: e.target.id
@@ -75,6 +96,7 @@ export default function Blog({post, thumb}){
           onClick={updateLike}
         />
       {likeClicked && <div className={styles.thankyou}>Merci!</div>}
+      {warning && <div>{message}</div>}
       </div>
     </div>
   </div>

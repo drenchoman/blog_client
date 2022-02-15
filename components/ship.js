@@ -10,6 +10,7 @@ export default function Ship({shipImage, filter}){
         width={500}
         height={500}
         src={shipImage}
+        priority
       />
     </div>
   )

@@ -29,8 +29,8 @@ const date_formatted = date.toLocaleDateString('en-GB', {
       <div className={styles.commentWrapper}>
         <Image
         src={commentImage}
-        width={15}
-        height={15}
+        width={20}
+        height={20}
         alt='Comments'
          />
          <span>{post.comments.length} </span>

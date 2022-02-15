@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React, {useState, useEffect} from "react";
 import { useRouter } from "next/router";
 
-export default function Comments({comment, thumb, index}){
+export default function Comments({comment, thumb, index, userAuth}){
   const date = new Date(comment.timeStamp);
   const date_formatted = date.toLocaleDateString('en-GB', {
     year: 'numeric',
@@ -17,14 +17,16 @@ export default function Comments({comment, thumb, index}){
 
 const checkLikedComments = (id) => {
   if(comment.likes.includes(id)){
-    setLikeClicked(true)
+    setLikeClicked(true);
+  } else{
+    setLikeClicked(false);
   }
 };
 
 useEffect(() =>{
   const id = localStorage.getItem("id");
   checkLikedComments(id);
-}, [])
+}, [userAuth])
 
 const updateLike = async (e) => {
   setLikeClicked(!likeClicked)

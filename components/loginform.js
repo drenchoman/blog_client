@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-export default function Loginform({updateUserAuth, className, formCard,}){
+export default function Loginform({updateUserAuth, className, formCard, redirect}){
 
   const [logErr, setLogErr] = useState(false);
   const [errMessage, setErrMessage] = useState('')
@@ -24,6 +24,7 @@ export default function Loginform({updateUserAuth, className, formCard,}){
   const { errors } = formState;
 
   const submitForm = async (data, e) => {
+
    const formData = JSON.stringify(data);
    try {
      const req = await fetch(
@@ -43,7 +44,7 @@ export default function Loginform({updateUserAuth, className, formCard,}){
        setLogErr(true);
        return;
      }
-     updateUserAuth(true);
+     await updateUserAuth(true);
      localStorage.setItem("token", myJson.token);
      localStorage.setItem("userAuth", true);
      localStorage.setItem("username", myJson.body.username);

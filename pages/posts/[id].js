@@ -50,7 +50,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
       <Head>
         <title>{firstpost.title}</title>
         <meta name="description" content={firstpost.content}/>
-        <link rel="icon" href="/images/favicon.ico" />
+        <link rel="icon" href="/public/images/favicon.ico" />
       </Head>
       <div className={styles.container}>
       <div className={styles.blogWrapper}>
@@ -59,7 +59,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
         </div>
         <div className={styles.blogDiv}>
           {firstpost.map((post, index) => (
-            <Blog key={index} thumb={thumb} post={post} />
+            <Blog key={index} thumb={thumb} post={post} userAuth={userAuth} />
 
 
           ))}
@@ -86,7 +86,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
             <h3>Remarks</h3>
           {currentComments.map((comment, index) =>(
 
-            <Comments key={index} thumb={thumb} comment={comment} />
+            <Comments userAuth={userAuth} key={index} thumb={thumb} comment={comment} />
           ))}
           <CommentReply userAuth={userAuth}  />
         </div>

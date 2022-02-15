@@ -6,21 +6,15 @@ import x from '../public/images/x.svg';
 import { useEffect, useState } from 'react';
 import Loginform from '../components/loginform'
 
-export default function Navrightside({userAuth, updateUserAuth, burgerClick, burgerClicked}){
+export default function Navrightside({userAuth, updateUserAuth, burgerClick, burgerClicked, userAuthenticated}){
 
-  const [userAuthenticated, setuserAuthenticated] = useState(false);
+
   const [loginChecked, setLoginChecked] = useState(false);
 
 
   const handleClick = () => {
     setLoginChecked(!loginChecked)
   };
-
-
-
-  useEffect(()=>{
-    setuserAuthenticated(userAuth)
-  },[userAuth])
 
   const handleSubmit = () => {
     // Dont need to call /api/logout as using token instead of session
@@ -36,7 +30,9 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
     return (
 
       <div className={styles.signIn}>
-        <button className={styles.logoutButton} onClick={handleSubmit}> Log out </button>
+        <button className={styles.logoutButton}
+          onClick={handleSubmit}> Log out
+        </button>
       <div onClick={burgerClick} className={styles.navBurger}>
 
         <Image
@@ -68,6 +64,7 @@ export default function Navrightside({userAuth, updateUserAuth, burgerClick, bur
       />
 
       </div>
+
 
     </div>
     {loginChecked && <div className={styles.modal}>

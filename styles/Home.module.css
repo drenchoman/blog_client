@@ -20,6 +20,8 @@ filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%
 .etchings > p {
   font-size: 1.1rem;
   text-align: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
 .topPostsWrapper{
@@ -50,6 +52,7 @@ filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%
 width: 100%;
 flex-direction: column;
 justify-content: center;
+padding-bottom: 3.5rem;
 
 
 }
@@ -187,7 +190,7 @@ justify-content: center;
 
 .thankyou{
 position: absolute;
-right: 4rem;
+right: 2.2rem;
 }
 
 /* BLOG WRAPPER */
@@ -276,6 +279,7 @@ flex-direction: row;
   justify-content: center;
   align-items: center;
   width:100%;
+  position: relative;
   filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
 
 }
@@ -286,6 +290,7 @@ flex-direction: row;
   justify-content: center;
   align-items: center;
   width:100%;
+  position: relative;
   /* padding: 1rem 0; */
   filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
 
@@ -378,9 +383,11 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+    width: 100%;
   }
   .thankyou{
     right: 0.2rem;
+
   }
 }
 
@@ -388,6 +395,9 @@ flex-direction: column;
   .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
+  .welcomeContainer{
+    padding-bottom: 0;
+  }
   .leftsideBar{
     height: 100%;
     order: 1;
@@ -417,9 +427,10 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+    width: 100%;
   }
   .thankyou{
-    right: 0.2rem;
+    right: 0.3rem;
   }
 }
 
@@ -427,6 +438,9 @@ flex-direction: column;
   .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
+  .welcomeContainer{
+    padding-bottom: 0;
+  }
   .leftsideBar{
     height: 100%;
     order: 1;
@@ -456,6 +470,7 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+    width: 100%;
   }
   .thankyou{
     right: 0.2rem;
@@ -466,6 +481,9 @@ flex-direction: column;
   .blogWrapper, .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
+  .welcomeContainer{
+    padding-bottom: 0;
+  }
   .subheaderDiv, .topPostsWrapper{
     border: 0;
   }
@@ -495,6 +513,7 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
+    width: 100%;
   }
   .thankyou{
     right: 0.2rem;

@@ -59,3 +59,7 @@
     color: #fff3c9;
     background-color: #00468b;
 }
+
+.submit:hover{
+  cursor:pointer;
+}
