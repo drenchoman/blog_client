@@ -2,6 +2,8 @@ import styles from '../styles/Comment.module.css'
 import Image from 'next/image'
 import React, {useState, useEffect} from "react";
 import { useRouter } from "next/router";
+import animations from '../styles/Animations.module.css'
+
 
 export default function Comments({comment, thumb, index, userAuth}){
   const date = new Date(comment.timeStamp);

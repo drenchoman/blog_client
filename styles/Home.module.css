@@ -12,6 +12,10 @@
 
 /* .blueFilter{
 filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%) contrast(104%);} */
+.etchings{
+  justify-content: center;
+  align-items: center;
+}
 
 .etchings > h2 {
   font-size: 3rem;
@@ -20,8 +24,8 @@ filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%
 .etchings > p {
   font-size: 1.1rem;
   text-align: center;
-  width: 60%;
-  margin: 0 auto;
+  width: 100%;
+
 }
 
 .topPostsWrapper{
@@ -352,11 +356,123 @@ flex-direction: column;
   cursor: pointer;
 }
 
+@media only screen and (max-width: 1200px) {
+  .blogWrapper, .welcomeWrapper{
+    flex-direction: row;
+  }
+  .welcomeContainer{
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8rem;
+    width: 100%;
+
+  }
+  .allPosts{
+    justify-content: center;
+    padding: 0;
+  }
+  .leftsideBar{
+    height: 100%;
+    margin: 1rem 1.5rem;
+    order: 1;
+  }
+  .rightSideBar{
+    order: 3;
+    height: 100%;
+    margin-top: 2rem;
+  }
+  .blogDiv{
+    order: 2;
+    margin-bottom: 4rem;
+  }
+  .topPostsWrapper{
+    width: 60%;
+    margin: 1.5rem 0;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+  .thankyou{
+    right: 0.2rem;
+
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+   .welcomeWrapper{
+    flex-direction: row;
+  }
+  .blogWrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcomeContainer{
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 8rem;
+
+  }
+  .allPosts{
+    justify-content: center;
+    padding: 0;
+  }
+  .leftsideBar{
+    height: 100%;
+    order: 1;
+  }
+  .rightSideBar{
+    order: 2;
+    height: 100%;
+    margin-top: 1rem;
+  }
+  .blogDiv{
+    order: 3;
+    margin-bottom: 4rem;
+    justify-content: center;
+    padding: 0 4rem;
+  }
+  .topPostsWrapper{
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .subheaderDiv, .topPostsWrapper{
+    border: 0;
+  }
+  .etchings > h2 {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+  .thankyou{
+    right: 0.2rem;
+
+  }
+
+}
+
 
 @media screen and (max-width: 720px){
   .blogWrapper, .welcomeWrapper{
     flex-direction: column;
   }
+  .welcomeContainer{
+    flex-direction: column;
+  }
+
   .leftsideBar{
     height: 100%;
     order: 1;
@@ -383,7 +499,6 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
-    width: 100%;
   }
   .thankyou{
     right: 0.2rem;
@@ -397,6 +512,7 @@ flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
+    width: 100%;
   }
   .leftsideBar{
     height: 100%;
@@ -427,7 +543,7 @@ flex-direction: column;
 
   .etchings > p {
     font-size: 1rem;
-    width: 100%;
+    padding: 0 0.1rem;
   }
   .thankyou{
     right: 0.3rem;
@@ -440,6 +556,7 @@ flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
+    width: 100%;
   }
   .leftsideBar{
     height: 100%;
@@ -466,6 +583,8 @@ flex-direction: column;
   }
   .etchings > h2 {
     font-size: 2rem;
+    width: 100%;
+
   }
 
   .etchings > p {
@@ -483,6 +602,7 @@ flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
+    width: 100%;
   }
   .subheaderDiv, .topPostsWrapper{
     border: 0;
@@ -509,6 +629,8 @@ flex-direction: column;
   }
   .etchings > h2 {
     font-size: 2rem;
+    width: 100%;
+    margin: 0;
   }
 
   .etchings > p {
