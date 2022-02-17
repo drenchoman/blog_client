@@ -9,6 +9,7 @@ import Comments from '../../components/comments'
 import CommentReply from '../../components/commentReply'
 import Blog from '../../components/blog'
 import thumb from '../../public/images/thumbpost.svg'
+import home from '../../public/images/home.svg'
 import { useRouter } from "next/router";
 import shipImage from '../../public/images/vintageship-min.svg'
 import chair from '../../public/images/sadoldman.svg'
@@ -100,8 +101,13 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
           <Ship className={styles.sadmanImage} shipImage={chair} />
           <Link href='/'>
-            <a>
-              <button className={styles.homeButton}>Home</button>
+            <a className={styles.homeButton}>
+              <Image
+              width={60}
+              height={60}
+              alt='Home button'
+              src={home}
+              />
             </a>
           </Link>
 
