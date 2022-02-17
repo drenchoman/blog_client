@@ -47,14 +47,14 @@ if(userAuthenticated){
     </nav>
     {burgerClicked &&
       <div className={styles.burgerModal }>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animateFade} ${animations.delay1}`}>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${animations.animateFade} ${animations.delay1}`}>
           <Link href='/register'>
           <a>
             Register
             </a>
           </Link>
         </div>
-        <div onClick={handleSubmit} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${styles.animateFade}`}>
+        <div onClick={handleSubmit} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${animations.animateFade}`}>
           <Link href='/'>
           <a>
             Logout
@@ -85,14 +85,14 @@ if(userAuthenticated){
     </nav>
     {burgerClicked &&
       <div className={styles.burgerModal }>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.animateFade} ${animations.delay1}`}>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${animations.animateFade} ${animations.delay1}`}>
           <Link href='/register'>
           <a>
             Register
             </a>
           </Link>
         </div>
-        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${styles.animateFade}`}>
+        <div onClick={burgerClick} className={`${styles.modalOption} ${styles.red} ${animations.delay1} ${animations.animateFade}`}>
           <Link href='/login'>
           <a>
             Login
