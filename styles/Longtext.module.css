@@ -1,0 +1,7 @@
+.longTextLink:hover,
+.longTextLink:focus,
+.longTextLink:active {
+  color: #8b0000;
+  text-decoration: underline;
+
+}

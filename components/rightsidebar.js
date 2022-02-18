@@ -1,4 +1,4 @@
-import styles from '../styles/Post.module.css'
+import styles from '../styles/Rightsidebar.module.css'
 import {useState} from "react";
 
 export default function Rightsidebar({post, yearWritten}){

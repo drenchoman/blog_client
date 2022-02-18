@@ -1,8 +1,7 @@
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Blog.module.css'
 import Image from 'next/image'
 import { useRouter } from "next/router";
 import {useState, useEffect} from 'react';
-import Registermodal from '../components/registermodal'
 
 export default function Blog({post, thumb, userAuth}){
   const {query} = useRouter();

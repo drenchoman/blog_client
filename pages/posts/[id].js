@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React, {useState, useEffect, useRef} from "react";
-import styles from '../../styles/Home.module.css'
-import Subheader from '../../components/subheader'
+import styles from '../../styles/Page.module.css'
 import Ship from '../../components/ship'
 import Rightsidebar from '../../components/rightsidebar'
 import Comments from '../../components/comments'
@@ -87,7 +86,7 @@ function BlogPost({firstpost, comments, userAuth, updateUserAuth}){
 
             </div>
             {loginChecked &&
-              <Loginform className={styles.loginComments} loginForm={styles.formCard}  updateUserAuth={updateUserAuth}/>
+              <Loginform className={styles.loginComments}   updateUserAuth={updateUserAuth}/>
             }
           </div> }
 

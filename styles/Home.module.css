@@ -10,24 +10,6 @@
   margin: 1rem 0;
 }
 
-/* .blueFilter{
-filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%) contrast(104%);} */
-.etchings{
-  justify-content: center;
-  align-items: center;
-}
-
-.etchings > h2 {
-  font-size: 3rem;
-}
-
-.etchings > p {
-  font-size: 1.1rem;
-  text-align: center;
-  width: 100%;
-
-}
-
 .topPostsWrapper{
   display: flex;
   flex-direction: column;
@@ -37,34 +19,11 @@ filter: invert(30%) sepia(79%) saturate(2906%) hue-rotate(201deg) brightness(95%
   border-left: 1px solid #8b0000;
 }
 
-.formCard{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 300px;
-  margin: 2rem;
-
-}
-
 .welcomeWrapper{
   display: flex;
   margin-bottom: 2rem;
 }
 
-.homeButton{
-  align-self: center;
-    display: flex;
-    margin: 0.5rem 0 2.5rem 0;;
-
-    justify-content: center;
-}
-
-.homeButton:hover,
-.homeButton:focus,
-.homeButton:active{
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 .welcomeContainer{
   display: flex;
@@ -72,41 +31,22 @@ width: 100%;
 flex-direction: column;
 justify-content: center;
 padding-bottom: 3.5rem;
-
-
 }
 
-.subheaderDiv{
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  width: 100%;
 
-  flex-direction: column;
-  /* border-right: 1px solid #8b0000; */
-  margin: 1rem 0;
-}
-.subheaderLeftSide{
+/* .subheaderLeftSide{
   display: flex;
   align-items:center;
   justify-content: center;
   width: 100%;
   flex-direction: column;
-}
+} */
 
 .welcomeImagediv{
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-}
-
-.sadmanImage{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 2rem 0;
 }
 
 .postImagediv{
@@ -137,250 +77,9 @@ padding-bottom: 3.5rem;
   margin: 2rem 0;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
-}
-
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-}
-
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
-}
-
-
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-.thankyou{
-position: absolute;
-right: 2.2rem;
-}
-
-/* BLOG WRAPPER */
-
-.blogWrapper{
-
-  display: flex;
-  height: 100%;
-  /* justify-content: center; */
-  /* align-items: center; */
-flex-direction: row;
-
-}
-
-.blogContent{
-  border-bottom: 3px solid #8b0000;
-  margin: 1rem 0;
-  padding: 0.25rem 0 2rem 0;
-}
-.leftsideBar{
-  width: 100%;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.rightSideBar{
-  width: 100%;
-  height: 55vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.commentWrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 2rem 0;
-}
-
-.blogDiv{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  /* margin: 1rem 0; */
-  width: 100%;
-  max-width: 600px;
-}
-
-.blogContainer{
-  padding: 1rem 0;
-  margin: 1rem 0;
-}
-
-.blogHeader > h2{
-  font-size: 3rem;
-  text-align: left;
-}
-.blogfooter{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-bottom: 3px solid #8b0000;
-  padding: 1.5rem 0 2rem 0;
-}
-
-.blogfooterContent{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  min-height: 70px;
-  height: 100%;
-
-}
-
-.blogfooterLikebuttonLiked{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  position: relative;
-  filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
-
-}
-
-.blogfooterLikebutton{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width:100%;
-  position: relative;
-  /* padding: 1rem 0; */
-  filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
-
-}
-
-.blogfooterLikebutton:hover,
-.blogfooterLikebuttonLiked:hover{
-  transform: scale(1.1);
-  cursor:pointer;
-}
-
-.hasDropcap{
-  line-height: 1.5;
-}
-
-.hasDropcap:first-letter {
-  font-family: "IM Fell DW Pica SC", serif;
-  float: left;
-  font-size: 4rem;
-  line-height: 0.65;
-  margin: 0.1em 0.1em 0.2em 0;
-  color: #8b0000;
-}
-.commentHelpWrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.commentHelp{
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
-
-.commentHelp > span{
-  margin: 1rem 0;
-}
-
-.helpButtons{
-    align-self: center;
-      display: flex;
-      border: 1px solid #8b0000;
-      margin: 0.5rem;
-      padding: 0.5rem;
-      width: 100px;
-      justify-content: center;
-      font-size: 1rem;
-      color: #fff3c9;
-    background-color: #8b0000;
-}
-
-.helpButtons:hover,
-.helpButtons:focus,
-.helpButtons:active{
-  text-decoration: underline;
-  cursor: pointer;
-}
 
 @media only screen and (max-width: 1200px) {
-  .blogWrapper, .welcomeWrapper{
+  .welcomeWrapper{
     flex-direction: row;
   }
   .welcomeContainer{
@@ -394,39 +93,14 @@ flex-direction: column;
     justify-content: center;
     padding: 0;
   }
-  .leftsideBar{
-    height: 100%;
-    margin: 1rem 1.5rem;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 3;
-    height: 100%;
-    margin-top: 2rem;
-  }
-  .blogDiv{
-    order: 2;
-    margin-bottom: 4rem;
-    padding: 0;
-  }
+
+
   .topPostsWrapper{
     width: 60%;
     margin: 1.5rem 0;
   }
-  .subheaderDiv, .topPostsWrapper{
+  .topPostsWrapper{
     border: 0;
-  }
-  .etchings > h2 {
-    font-size: 2rem;
-  }
-
-  .etchings > p {
-    font-size: 1rem;
-    padding: 0 2rem;
-  }
-  .thankyou{
-    right: 0.2rem;
-
   }
 
 }
@@ -435,10 +109,7 @@ flex-direction: column;
    .welcomeWrapper{
     flex-direction: row;
   }
-  .blogWrapper{
-    flex-direction: column;
-    align-items: center;
-  }
+
   .welcomeContainer{
     flex-direction: column;
     justify-content: center;
@@ -449,111 +120,52 @@ flex-direction: column;
     justify-content: center;
     padding: 0;
   }
-  .leftsideBar{
-    height: 100%;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 2;
-    height: 100%;
-    margin-top: 1rem;
-  }
-  .blogDiv{
-    order: 3;
-    margin-bottom: 4rem;
-    justify-content: center;
-    padding: 0 4rem;
-  }
+
+
   .topPostsWrapper{
     width: 100%;
     margin: 1.5rem 0;
   }
-  .subheaderDiv, .topPostsWrapper{
+  .topPostsWrapper{
     border: 0;
   }
-  .etchings > h2 {
-    font-size: 2rem;
-    padding: 0.5rem 2rem;
 
-  }
 
-  .etchings > p {
-    font-size: 1rem;
-    padding: 0 2rem;
-  }
-  .thankyou{
-    right: 0.2rem;
-
-  }
 
 }
 
 
 @media screen and (max-width: 720px){
-  .blogWrapper, .welcomeWrapper{
+  .welcomeWrapper{
     flex-direction: column;
   }
   .welcomeContainer{
     flex-direction: column;
   }
 
-  .leftsideBar{
-    height: 100%;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 2;
-    height: 100%;
-    margin-top: 1rem;
-  }
-  .blogDiv{
-    order: 3;
-    margin-bottom: 4rem;
-    padding: 0;
-  }
+
   .topPostsWrapper{
     width: 100%;
     margin: 1.5rem 0;
   }
-  .subheaderDiv, .topPostsWrapper{
+  .topPostsWrapper{
     border: 0;
   }
-  .etchings > h2 {
-    font-size: 2rem;
-  }
 
-  .etchings > p {
-    font-size: 1rem;
-  }
-  .thankyou{
-    right: 0.2rem;
 
-  }
 }
 
 @media screen and (max-width: 414px){
-  .blogWrapper, .welcomeWrapper, .welcomeContainer{
+  .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
     width: 100%;
   }
-  .leftsideBar{
-    height: 100%;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 2;
-    height: 100%;
-    margin-top: 1rem;
-  }
-  .blogDiv{
-    order: 3;
-      margin-bottom: 4rem;
-      padding: 0;
-  }
-  .subheaderDiv, .topPostsWrapper{
+
+
+  .topPostsWrapper{
     border: 0;
   }
   .allPosts{
@@ -563,42 +175,21 @@ flex-direction: column;
     width: 100%;
     margin: 1.5rem 0;
   }
-  .etchings > h2 {
-    font-size: 2rem;
-  }
 
-  .etchings > p {
-    font-size: 1rem;
-    padding: 0 0.1rem;
-  }
-  .thankyou{
-    right: 0.3rem;
-  }
+
 }
 
 @media screen and (max-width: 375px){
-  .blogWrapper, .welcomeWrapper, .welcomeContainer{
+  .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
     width: 100%;
   }
-  .leftsideBar{
-    height: 100%;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 2;
-    height: 100%;
-    margin-top: 1rem;
-  }
-  .blogDiv{
-    order: 3;
-      margin-bottom: 4rem;
-      padding: 0;
-  }
-  .subheaderDiv, .topPostsWrapper{
+
+
+  .topPostsWrapper{
     border: 0;
   }
   .allPosts{
@@ -608,64 +199,28 @@ flex-direction: column;
     width: 100%;
     margin: 1.5rem 0;
   }
-  .etchings > h2 {
-    font-size: 2rem;
-    width: 100%;
 
-  }
 
-  .etchings > p {
-    font-size: 1rem;
-    width: 100%;
-  }
-  .thankyou{
-    right: 0.2rem;
-  }
 }
 
 @media screen and (max-width: 325px){
-  .blogWrapper, .welcomeWrapper, .welcomeContainer{
+  .welcomeWrapper, .welcomeContainer{
     flex-direction: column;
   }
   .welcomeContainer{
     padding-bottom: 0;
     width: 100%;
   }
-  .subheaderDiv, .topPostsWrapper{
+  .topPostsWrapper{
     border: 0;
   }
   .allPosts{
     padding: 0;
   }
-  .leftsideBar{
-    height: 100%;
-    order: 1;
-  }
-  .rightSideBar{
-    order: 2;
-    height: 100%;
-    margin-top: 1rem;
-  }
-  .blogDiv{
-    order: 3;
-      margin-bottom: 4rem;
-      padding: 0;
-  }
+
   .topPostsWrapper{
     width: 100%;
     margin: 1.5rem 0;
   }
-  .etchings > h2 {
-    font-size: 2rem;
-    width: 100%;
-    margin: 0;
-  }
 
-  .etchings > p {
-    font-size: 1rem;
-    width: 100%;
-  }
-  .thankyou{
-    right: 0.2rem;
-  }
 }

@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import React, {useState} from "react";
 import { useRouter } from "next/router";
-import styles from '../styles/Comment.module.css'
+import styles from '../styles/CommentReply.module.css'
 import Image from 'next/image'
 
 export default function CommentReply({userAuth}){

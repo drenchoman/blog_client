@@ -1,4 +1,4 @@
-import styles from '../styles/Post.module.css'
+import styles from '../styles/Topblogs.module.css'
 import Longtext from '../components/longtext'
 import animations from '../styles/Animations.module.css'
 import Link from 'next/link'

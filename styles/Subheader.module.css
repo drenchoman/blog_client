@@ -1,0 +1,120 @@
+.subheaderDiv{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.etchings{
+  justify-content: center;
+  align-items: center;
+}
+
+.etchings > h2 {
+  font-size: 3rem;
+}
+
+.etchings > p {
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+
+}
+
+@media only screen and (max-width: 992px) {
+  .etchings > h2 {
+    font-size: 2rem;
+    padding: 0.5rem 2rem;
+
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    padding: 0 2rem;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 414px){
+  .etchings > h2 {
+    font-size: 2rem;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    padding: 0 0.1rem;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .etchings > h2 {
+    font-size: 2rem;
+    width: 100%;
+
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+}
+
+@media screen and (max-width: 325px){
+  .etchings > h2 {
+    font-size: 2rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .etchings > p {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .subheaderDiv{
+    border: 0;
+  }
+}

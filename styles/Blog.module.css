@@ -1,0 +1,114 @@
+.blogContainer{
+  padding: 1rem 0;
+  margin: 1rem 0;
+}
+
+.blogHeader > h2{
+  font-size: 3rem;
+  text-align: left;
+}
+
+.blogContent{
+  border-bottom: 3px solid #8b0000;
+  margin: 1rem 0;
+  padding: 0.25rem 0 2rem 0;
+}
+
+.blogfooter{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 3px solid #8b0000;
+  padding: 1.5rem 0 2rem 0;
+}
+
+.blogfooterContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 70px;
+  height: 100%;
+}
+
+.blogfooterLikebuttonLiked{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  position: relative;
+  filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
+}
+
+.blogfooterLikebutton{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  position: relative;
+  filter: invert(12%) sepia(37%) saturate(7282%) hue-rotate(353deg) brightness(89%) contrast(118%)
+}
+
+.blogfooterLikebutton:hover,
+.blogfooterLikebuttonLiked:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+}
+
+.hasDropcap{
+  line-height: 1.5;
+}
+
+.hasDropcap:first-letter {
+  font-family: "IM Fell DW Pica SC", serif;
+  float: left;
+  font-size: 4rem;
+  line-height: 0.65;
+  margin: 0.1em 0.1em 0.2em 0;
+  color: #8b0000;
+}
+
+.thankyou{
+position: absolute;
+right: 2.2rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .thankyou{
+    right: 0.2rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .thankyou{
+    right: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 720px){
+  .thankyou{
+    right: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 414px){
+  .thankyou{
+    right: 0.3rem;
+  }
+}
+
+@media screen and (max-width: 375px){
+  .thankyou{
+    right: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 325px){
+  .thankyou{
+    right: 0.2rem;
+  }
+}

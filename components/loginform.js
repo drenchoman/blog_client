@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import styles from "../styles/Register.module.css";
+import styles from "../styles/Login.module.css";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';

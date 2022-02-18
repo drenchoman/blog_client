@@ -1,5 +1,3 @@
-
-
 .commentCard{
   display: flex;
   flex-direction: column;
@@ -13,27 +11,11 @@
   padding: 1rem 0.5rem;
 }
 
-.commentReply{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  min-height: 125px;
-
-}
-
 .likedComment{
   filter: invert(36%) sepia(15%) saturate(3501%) hue-rotate(108deg) brightness(103%) contrast(103%);
   position: absolute;
   top: 1rem;
   right: 1rem;
-}
-
-
-
-.commentReply > label{
-  margin: 0.5rem 0;
 }
 
 .commentContent{
@@ -43,7 +25,6 @@
 .likeCount{
   position: absolute;
   bottom: 1rem;
-
 }
 
 .date{
@@ -61,18 +42,4 @@
 .likedComment:hover{
   cursor:pointer;
   transform: scale(1.1);
-}
-
-
-
-.submitButton{
-  display: flex;
-  border: 1px solid #8b0000;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  width: 100px;
-  justify-content: center;
-  font-size: 1rem;
-  color: #fff3c9;
-  background-color: #8b0000;
 }
