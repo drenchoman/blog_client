@@ -3,6 +3,7 @@ import Image from 'next/image'
 import React, {useState, useEffect} from "react";
 import { useRouter } from "next/router";
 import animations from '../styles/Animations.module.css'
+import thumb2 from '../public/images/thumbcomment.svg'
 
 
 export default function Comments({comment, thumb, index, userAuth}){
@@ -77,7 +78,16 @@ if (comment === 'undefined' || null || comment.length == 0){
         <p className={styles.commentContent}>{comment.comment}</p>
       </div>
       <div className={styles.likeCount}>
-        <span>Likes: {comment.likeCount}</span>
+      <span>{comment.likeCount}</span>
+      <div className={styles.commentThumb}>
+      <Image
+        width={9}
+        height={9}
+        src={thumb2}
+        alt='Thumbs up'
+      />
+      </div>
+
       </div>
       <div className={likeClicked ? styles.likedComment : styles.thumbsup } >
 
