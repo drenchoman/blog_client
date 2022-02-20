@@ -4,7 +4,6 @@
   justify-content: center;
   width: 100%;
   flex-direction: column;
-  margin: 1rem 0;
 }
 
 .etchings{
@@ -12,20 +11,21 @@
   align-items: center;
 }
 
-.etchings > h2 {
-  font-size: 3rem;
+.etchings > h1 {
+  font-size: 3.5rem;
+  width: 20ch;
 }
 
 .etchings > p {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   text-align: center;
   width: 100%;
 
 }
 
 @media only screen and (max-width: 1200px) {
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 3rem;
   }
 
   .etchings > p {
@@ -40,8 +40,8 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 3rem;
     padding: 0.5rem 2rem;
 
   }
@@ -57,12 +57,13 @@
 }
 
 @media screen and (max-width: 720px){
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 3rem;
   }
 
   .etchings > p {
     font-size: 1rem;
+    padding: 0 1.2rem;
   }
 
   .subheaderDiv{
@@ -71,13 +72,14 @@
 }
 
 @media screen and (max-width: 414px){
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 2.5rem;
+    width: 100%;
   }
 
   .etchings > p {
-    font-size: 1rem;
-    padding: 0 0.1rem;
+    font-size: 1.1rem;
+    padding: 0 1.2rem;
   }
 
   .subheaderDiv{
@@ -86,15 +88,16 @@
 }
 
 @media screen and (max-width: 375px){
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 2.5rem;
     width: 100%;
 
   }
 
   .etchings > p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 100%;
+    padding: 0 1.2rem;
   }
 
   .subheaderDiv{
@@ -103,15 +106,16 @@
 }
 
 @media screen and (max-width: 325px){
-  .etchings > h2 {
-    font-size: 2rem;
+  .etchings > h1 {
+    font-size: 2.5rem;
     width: 100%;
     margin: 0;
   }
 
   .etchings > p {
-    font-size: 1rem;
+    font-size: 1.25rem;
     width: 100%;
+    padding: 0 1.2rem;
   }
 
   .subheaderDiv{

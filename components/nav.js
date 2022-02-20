@@ -6,7 +6,7 @@ import nav from '../public/images/nav.svg'
 import { useEffect, useState } from 'react';
 import Navrightside from '../components/navrightside'
 
-export default function Nav({text, className, userAuth, updateUserAuth}){
+export default function Nav({text, userAuth, updateUserAuth}){
 
 const [burgerClicked, setBurgerClicked] = useState(false);
   const [userAuthenticated, setuserAuthenticated] = useState(false);
@@ -36,7 +36,7 @@ if(userAuthenticated){
       <div className={styles.logo}>
         <Link href='/'>
         <a>
-          <h1 className={className}>{text}</h1>
+          <span className={styles.logoText}>{text}</span>
         </a>
         </Link>
       </div>
@@ -74,7 +74,7 @@ if(userAuthenticated){
       <div className={styles.logo}>
         <Link href='/'>
         <a>
-          <h1 className={className}>{text}</h1>
+          <span className={styles.logoText}>{text}</span>
         </a>
         </Link>
       </div>

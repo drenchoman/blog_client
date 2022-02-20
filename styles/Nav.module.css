@@ -7,13 +7,23 @@
   position: relative;
   padding: 0 2rem;
   background-color: #fff1c0;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .loginWrapper{
 
   right: 10rem;
   top: 6rem;
+}
+
+.logoText{
+  font-family: "IM Fell DW Pica SC", serif;
+	color: #8b0000;
+	font-size: 2.5rem;
+	margin: auto;
+	text-align: center;
+	font-weight: normal;
+  margin: 1.5rem 0;
 }
 
 .logo:hover, .logo:focus, .logo:active  {
